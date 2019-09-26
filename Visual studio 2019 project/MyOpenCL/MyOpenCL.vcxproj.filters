@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyOpenCL\MyOpenCL.cpp">
+      <Filter>MyOpenCL</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="MyOpenCL">
+      <UniqueIdentifier>{dfcfbd45-d4b6-44c7-936f-c0d356825a27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyOpenCL\MyOpenCL.h">
+      <Filter>MyOpenCL</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
