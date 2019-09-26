@@ -1,3 +1,5 @@
-﻿  main.cpp
+﻿  MyOpenCL.cpp
   cl2.hpp: CL_HPP_TARGET_OPENCL_VERSION is not defined. It will default to 210 (OpenCL 2.1)
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\MyOpenCL.cpp(50,34): warning C4244:  '=': conversion from 'double' to 'size_t', possible loss of data
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\MyOpenCL.cpp(51,34): warning C4244:  '=': conversion from 'double' to 'size_t', possible loss of data
   MyOpenCL.vcxproj -> D:\GitHub\MyOpenCL\Visual studio 2019 project\Debug\MyOpenCL.exe
