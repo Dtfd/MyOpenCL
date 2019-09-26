@@ -2,10 +2,11 @@
 //
 
 #include <iostream>
-#include <CL/cl2.hpp>
+#include "MyOpenCL/MyOpenCL.h"
 int main()
 {
-    std::cout << "Hello World!\n";
+	MyOpenCL* mocl = new MyOpenCL();//CL_DEVICE_TYPE_ACCELERATOR
+	MY_OPEN_CL_CHECK_ERROR(mocl->Error(), "new MyOpenCL", return -1;)
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
