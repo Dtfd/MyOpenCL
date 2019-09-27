@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feedback>
+ <message severity="info">Analysis started...</message>
+ <nop/>
+ <message severity="info">Result file: D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\My Inspector Results - MyOpenCL\r006mi3\r006mi3.inspxe </message>
+ <nop/>
+ <message severity="info">Analysis started for d:\github\myopencl\visual studio 2019 project\debug\myopencl.exe (pid = 17508) </message>
+ <nop/>
+ <message severity="info">Loaded module: d:\github\myopencl\visual studio 2019 project\debug\myopencl.exe, address range [0x6a0000-0x6cafff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\kernelbase.dll, address range [0x75280000-0x7547bfff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\kernel32.dll, address range [0x76570000-0x7664ffff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\ntdll.dll, address range [0x76f40000-0x770d9fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\ucrtbased.dll, address range [0x78b20000-0x78c94fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\opencl.dll, address range [0xcdb0000-0xce1efff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\vcruntime140d.dll, address range [0x7c800000-0x7c81afff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\msvcp140d.dll, address range [0x78a40000-0x78af7fff] </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\OpenCL.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\opencl.dll, address range [0xd010000-0xd07efff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\advapi32.dll, address range [0x75b30000-0x75ba8fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\msvcrt.dll, address range [0x76850000-0x7690efff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\sechost.dll, address range [0x74ac0000-0x74b35fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\rpcrt4.dll, address range [0x759a0000-0x75a5afff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\sspicli.dll, address range [0x74710000-0x7472ffff], minimal analysis </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\cryptbase.dll, address range [0x74700000-0x74709fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\bcryptprimitives.dll, address range [0x76dc0000-0x76e1efff], minimal analysis </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\cfgmgr32.dll, address range [0x76530000-0x7656afff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\ucrtbase.dll, address range [0x74b40000-0x74c5efff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\ole32.dll, address range [0x762c0000-0x763b6fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\combase.dll, address range [0x76a90000-0x76d05fff], minimal analysis </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\gdi32.dll, address range [0x76820000-0x76840fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\win32u.dll, address range [0x76740000-0x76756fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\gdi32full.dll, address range [0x76130000-0x76289fff], minimal analysis </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\msvcp_win.dll, address range [0x766c0000-0x7673bfff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\user32.dll, address range [0x74920000-0x74ab4fff], minimal analysis </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\imm32.dll, address range [0x76290000-0x762b4fff], minimal analysis </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\system32\driverstore\filerepository\nvami.inf_amd64_647dff284c83a66c\nvopencl32.dll, address range [0x78ca0000-0x7a933fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\shell32.dll, address range [0x75bb0000-0x76127fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\version.dll, address range [0x731e0000-0x731e7fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\shcore.dll, address range [0x747f0000-0x74873fff], minimal analysis </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\windows.storage.dll, address range [0x74c60000-0x75223fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\profapi.dll, address range [0x74880000-0x74896fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\powrprof.dll, address range [0x754e0000-0x75522fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\umpdc.dll, address range [0x75a60000-0x75a6cfff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\shlwapi.dll, address range [0x75230000-0x75273fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\kernel.appcore.dll, address range [0x76660000-0x7666efff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\cryptsp.dll, address range [0x75530000-0x75542fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\setupapi.dll, address range [0x75550000-0x75998fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\bcrypt.dll, address range [0x747c0000-0x747d8fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\ws2_32.dll, address range [0x767c0000-0x7681dfff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\dwmapi.dll, address range [0x700c0000-0x700e4fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\uxtheme.dll, address range [0x742c0000-0x74339fff], minimal analysis </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\dwmapi.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\dxcore.dll, address range [0x72720000-0x72738fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\nvapi.dll, address range [0x50b70000-0x50fc4fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\dxgi.dll, address range [0x664d0000-0x66590fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\mscms.dll, address range [0x50ad0000-0x50b63fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\userenv.dll, address range [0x746d0000-0x746edfff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\coloradapterclient.dll, address range [0x50ab0000-0x50ac0fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\oleaut32.dll, address range [0x75a70000-0x75b01fff], minimal analysis </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\intelopencl32.dll, address range [0x10ea0000-0x10eeefff] </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\IntelOpenCL32.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\intelopencl32.dll, address range [0x10ea0000-0x10eeefff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\program files (x86)\common files\intel\opencl\bin\x86\intelocl32.dll, address range [0x11000000-0x1117bfff] </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x86\intelocl32.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\program files (x86)\common files\intel\opencl\bin\x86\intelocl32.dll, address range [0x11000000-0x1117bfff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\program files (x86)\common files\intel\opencl\bin\x86\task_executor32.dll, address range [0x111f0000-0x1126efff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\opengl32.dll, address range [0x51690000-0x5178efff] </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x86\task_executor32.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\glu32.dll, address range [0x51210000-0x5124efff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\program files (x86)\common files\intel\opencl\bin\x86\task_executor32.dll, address range [0x11290000-0x1130efff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\program files (x86)\intelswtools\inspector 2019\bin32\runtime\libittnotify.dll, address range [0x11310000-0x1133cfff], minimal analysis </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Program Files (x86)\IntelSWTools\Inspector 2019\bin32\runtime\libittnotify.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\program files (x86)\intelswtools\inspector 2019\bin32\runtime\libittnotify.dll, address range [0x11310000-0x1133cfff], minimal analysis </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\program files (x86)\common files\intel\opencl\bin\x86\cpu_device32.dll, address range [0x11520000-0x115c2fff] </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x86\cpu_device32.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\program files (x86)\common files\intel\opencl\bin\x86\cpu_device32.dll, address range [0x11520000-0x115c2fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\igdrcl32.dll, address range [0x117a0000-0x11bd5fff] </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\igdrcl32.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\igdrcl32.dll, address range [0x117a0000-0x11bd5fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\resourcepolicyclient.dll, address range [0x56080000-0x5608efff] </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\ResourcePolicyClient.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\system32\driverstore\filerepository\nvami.inf_amd64_647dff284c83a66c\nvdlist.dll, address range [0x12170000-0x1219afff] </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\System32\DriverStore\FileRepository\nvami.inf_amd64_647dff284c83a66c\nvdlist.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\system32\driverstore\filerepository\nvami.inf_amd64_647dff284c83a66c\nvdlist.dll, address range [0x12170000-0x1219afff] </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\System32\DriverStore\FileRepository\nvami.inf_amd64_647dff284c83a66c\nvdlist.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\igdfcl32.dll, address range [0x13040000-0x13077fff] </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\igdfcl32.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\igdfcl32.dll, address range [0x13040000-0x13077fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\igdmcl32.dll, address range [0x130c0000-0x1348ffff] </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\igdmcl32.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\igdmcl32.dll, address range [0x130c0000-0x1348ffff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\dbghelp.dll, address range [0x734a0000-0x7362efff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\igdbcl32.dll, address range [0x13650000-0x136affff] </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\igdbcl32.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\igdbcl32.dll, address range [0x13650000-0x136affff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\igdusc32.dll, address range [0x5f8d0000-0x60199fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\program files (x86)\amd app sdk\3.0\bin\x86\amdocl.dll, address range [0x13a00000-0x16012fff] </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Program Files (x86)\AMD APP SDK\3.0\bin\x86\amdocl.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\program files (x86)\amd app sdk\3.0\bin\x86\amdocl.dll, address range [0x13a00000-0x16012fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\program files (x86)\amd app sdk\3.0\bin\x86\amdocl12cl.dll, address range [0x16380000-0x17920fff] </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Program Files (x86)\AMD APP SDK\3.0\bin\x86\amdocl12cl.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\program files (x86)\amd app sdk\3.0\bin\x86\amdocl12cl.dll, address range [0x16380000-0x17920fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\winmm.dll, address range [0x74370000-0x74393fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\winmmbase.dll, address range [0x74340000-0x74362fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\dwmapi.dll, address range [0x700c0000-0x700e4fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\devobj.dll, address range [0x74650000-0x74672fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\wintrust.dll, address range [0x76670000-0x766b5fff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\msasn1.dll, address range [0x76980000-0x7698dfff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\crypt32.dll, address range [0x76990000-0x76a8afff] </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\intelopenclprofiler.dll, address range [0x17d80000-0x17f29fff] </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\IntelOpenCLProfiler.dll </message>
+ <nop/>
+ <message severity="info">Loaded module: c:\windows\syswow64\intelopenclprofiler.dll, address range [0x17d80000-0x17f29fff] </message>
+ <nop/>
+ <message severity="info">Process d:\github\myopencl\visual studio 2019 project\debug\myopencl.exe exited with code 0. Leak analysis starting. Please wait... </message>
+ <nop/>
+ <message severity="info">Unloaded module: D:\GitHub\MyOpenCL\Visual studio 2019 project\Debug\MyOpenCL.exe </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\KernelBase.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\kernel32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\ntdll.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\ucrtbased.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\vcruntime140d.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\msvcp140d.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\OpenCL.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\advapi32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\msvcrt.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\sechost.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\rpcrt4.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\sspicli.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\cryptbase.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\bcryptprimitives.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\cfgmgr32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\ucrtbase.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\ole32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\combase.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\gdi32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\win32u.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\gdi32full.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\msvcp_win.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\user32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\imm32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\System32\DriverStore\FileRepository\nvami.inf_amd64_647dff284c83a66c\nvopencl32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\shell32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\version.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\SHCore.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\windows.storage.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\profapi.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\powrprof.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\umpdc.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\shlwapi.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\kernel.appcore.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\cryptsp.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\setupapi.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\bcrypt.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\ws2_32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\uxtheme.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\DXCore.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\nvapi.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\dxgi.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\mscms.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\userenv.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\coloradapterclient.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\oleaut32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\IntelOpenCL32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x86\intelocl32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\opengl32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\glu32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x86\task_executor32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Program Files (x86)\IntelSWTools\Inspector 2019\bin32\runtime\libittnotify.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x86\cpu_device32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\igdrcl32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\igdfcl32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\igdmcl32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\dbghelp.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\igdbcl32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\igdusc32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Program Files (x86)\AMD APP SDK\3.0\bin\x86\amdocl.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Program Files (x86)\AMD APP SDK\3.0\bin\x86\amdocl12cl.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\winmm.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\winmmbase.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\dwmapi.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\devobj.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\wintrust.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\msasn1.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\crypt32.dll </message>
+ <nop/>
+ <message severity="info">Unloaded module: C:\Windows\SysWOW64\IntelOpenCLProfiler.dll </message>
+ <nop/>
+ <message severity="info">Completed analysis for d:\github\myopencl\visual studio 2019 project\debug\myopencl.exe </message>
+ <nop/>
+ <message severity="info">Application exit code: 0 </message>
+ <nop/>
+ <message severity="info">Result file: D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\My Inspector Results - MyOpenCL\r006mi3\r006mi3.inspxe </message>
+ <nop/>
+ <message severity="info">Analysis completed</message>
+ <nop/>
+</feedback>

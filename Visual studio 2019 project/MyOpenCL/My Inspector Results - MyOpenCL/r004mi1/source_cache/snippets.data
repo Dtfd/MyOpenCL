@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippets>
+  <file name="D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\main.cpp" md5="fc04edf75f0c7841c32b03968bd7f5f7">
+    <snippet line="8">
+      <line line="5">int main()</line>
+      <line line="6">{</line>
+      <line line="7">    MyOpenCL* mocl = new MyOpenCL();//CL_DEVICE_TYPE_ACCELERATOR</line>
+      <line line="8">    MY_OPEN_CL_CHECK_ERROR(mocl-&gt;Error(), "new MyOpenCL", );</line>
+      <line line="9">    mocl-&gt;~MyOpenCL();</line>
+    </snippet>
+  </file>
+</snippets>

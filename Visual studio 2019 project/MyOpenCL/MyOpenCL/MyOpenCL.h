@@ -2,6 +2,7 @@
 #include <CL/cl2.hpp>
 
 #include <iostream>
+/*
 #ifndef MY_OPENCL_ECHO_OFF
 #define MY_OPEN_CL_ECHO(msg) std::cout << msg
 #define MY_OPEN_CL_ECHO_L(msg) std::cout << msg << std::endl;
@@ -9,6 +10,7 @@
 #define MY_OPEN_CL_ECHO(msg)
 #define MY_OPEN_CL_ECHO_L(msg) 
 #endif // !MY_OPENCL_ECHO_OFF
+*/
 
 #ifndef MY_OPENCL_ECHO_ERROR_OFF
 #define MY_OPEN_CL_CHECK_ERROR(errorCode, msg, action) if(errorCode != CL_SUCCESS){ std::cout << msg << ": " << errorCode << std::endl; action }
