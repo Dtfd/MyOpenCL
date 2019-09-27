@@ -1,0 +1,18 @@
+-r
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\My Inspector Results - MyOpenCL\r006mi3
+--access-checks
+--analyze-stack
+--leak-maximum=100000
+--leak-check-on-exit
+--leak-check-on-demand
+--check-resource-leaks
+--leak-check-report-reachable
+--freelist-vol=1000000
+--guard-zone-size=32
+--stack-depth=32
+--no-close-console
+--mrte-mode=auto
+--heartbeat=1
+--enable-memory-growth
+--
+D:\GitHub\MyOpenCL\Visual studio 2019 project\Debug\MyOpenCL.exe

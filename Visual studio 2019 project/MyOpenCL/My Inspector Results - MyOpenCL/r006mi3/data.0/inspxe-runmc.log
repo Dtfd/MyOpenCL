@@ -1,0 +1,1774 @@
+<?xml version="1.0" encoding="utf-8"?>
+<log version="1.0" tool="runtool">
+
+<msg id="1" tool="runtool">
+  <type>log-start</type>
+  <arg>2019/09/27 04:54:40</arg>
+</msg>
+<msg id="2" tool="runtool">
+  <type>collector-starts</type>
+</msg>
+<msg id="3" tool="runtool">
+  <type>marker-file</type>
+  <arg>D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\My Inspector Results - MyOpenCL\r006mi3\r006mi3.inspxe</arg>
+</msg>
+<msg id="4" tool="mc">
+  <type>EXEC_OF_INTEREST</type>
+  <arg>d:\github\myopencl\visual studio 2019 project\debug\myopencl.exe</arg>
+  <arg>17508</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:41 2019</timestamp>
+</msg>
+<msg id="5" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>d:\github\myopencl\visual studio 2019 project\debug\myopencl.exe</arg>
+  <arg>0x6a0000</arg>
+  <arg>0x6cafff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:41 2019</timestamp>
+</msg>
+<msg id="6" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\kernelbase.dll</arg>
+  <arg>0x75280000</arg>
+  <arg>0x7547bfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:41 2019</timestamp>
+</msg>
+<msg id="7" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\kernel32.dll</arg>
+  <arg>0x76570000</arg>
+  <arg>0x7664ffff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:41 2019</timestamp>
+</msg>
+<msg id="8" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\ntdll.dll</arg>
+  <arg>0x76f40000</arg>
+  <arg>0x770d9fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:41 2019</timestamp>
+</msg>
+<msg id="9" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\ucrtbased.dll</arg>
+  <arg>0x78b20000</arg>
+  <arg>0x78c94fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:43 2019</timestamp>
+</msg>
+<msg id="10" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\opencl.dll</arg>
+  <arg>0xcdb0000</arg>
+  <arg>0xce1efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:43 2019</timestamp>
+</msg>
+<msg id="11" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\vcruntime140d.dll</arg>
+  <arg>0x7c800000</arg>
+  <arg>0x7c81afff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:43 2019</timestamp>
+</msg>
+<msg id="12" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\msvcp140d.dll</arg>
+  <arg>0x78a40000</arg>
+  <arg>0x78af7fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:43 2019</timestamp>
+</msg>
+<msg id="13" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\OpenCL.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:43 2019</timestamp>
+</msg>
+<msg id="14" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\opencl.dll</arg>
+  <arg>0xd010000</arg>
+  <arg>0xd07efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:43 2019</timestamp>
+</msg>
+<msg id="15" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\advapi32.dll</arg>
+  <arg>0x75b30000</arg>
+  <arg>0x75ba8fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:43 2019</timestamp>
+</msg>
+<msg id="16" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\msvcrt.dll</arg>
+  <arg>0x76850000</arg>
+  <arg>0x7690efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:43 2019</timestamp>
+</msg>
+<msg id="17" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\sechost.dll</arg>
+  <arg>0x74ac0000</arg>
+  <arg>0x74b35fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:43 2019</timestamp>
+</msg>
+<msg id="18" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\rpcrt4.dll</arg>
+  <arg>0x759a0000</arg>
+  <arg>0x75a5afff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:43 2019</timestamp>
+</msg>
+<msg id="19" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\sspicli.dll</arg>
+  <arg>0x74710000</arg>
+  <arg>0x7472ffff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:43 2019</timestamp>
+</msg>
+<msg id="20" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\cryptbase.dll</arg>
+  <arg>0x74700000</arg>
+  <arg>0x74709fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:43 2019</timestamp>
+</msg>
+<msg id="21" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\bcryptprimitives.dll</arg>
+  <arg>0x76dc0000</arg>
+  <arg>0x76e1efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:43 2019</timestamp>
+</msg>
+<msg id="22" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\cfgmgr32.dll</arg>
+  <arg>0x76530000</arg>
+  <arg>0x7656afff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:43 2019</timestamp>
+</msg>
+<msg id="23" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\ucrtbase.dll</arg>
+  <arg>0x74b40000</arg>
+  <arg>0x74c5efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:44 2019</timestamp>
+</msg>
+<msg id="24" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\ole32.dll</arg>
+  <arg>0x762c0000</arg>
+  <arg>0x763b6fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:44 2019</timestamp>
+</msg>
+<msg id="25" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\combase.dll</arg>
+  <arg>0x76a90000</arg>
+  <arg>0x76d05fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:44 2019</timestamp>
+</msg>
+<msg id="26" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\gdi32.dll</arg>
+  <arg>0x76820000</arg>
+  <arg>0x76840fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:44 2019</timestamp>
+</msg>
+<msg id="27" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\win32u.dll</arg>
+  <arg>0x76740000</arg>
+  <arg>0x76756fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:44 2019</timestamp>
+</msg>
+<msg id="28" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\gdi32full.dll</arg>
+  <arg>0x76130000</arg>
+  <arg>0x76289fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:44 2019</timestamp>
+</msg>
+<msg id="29" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\msvcp_win.dll</arg>
+  <arg>0x766c0000</arg>
+  <arg>0x7673bfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:44 2019</timestamp>
+</msg>
+<msg id="30" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\user32.dll</arg>
+  <arg>0x74920000</arg>
+  <arg>0x74ab4fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:44 2019</timestamp>
+</msg>
+<msg id="31" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\imm32.dll</arg>
+  <arg>0x76290000</arg>
+  <arg>0x762b4fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:47 2019</timestamp>
+</msg>
+<msg id="32" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\system32\driverstore\filerepository\nvami.inf_amd64_647dff284c83a66c\nvopencl32.dll</arg>
+  <arg>0x78ca0000</arg>
+  <arg>0x7a933fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:50 2019</timestamp>
+</msg>
+<msg id="33" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\shell32.dll</arg>
+  <arg>0x75bb0000</arg>
+  <arg>0x76127fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:50 2019</timestamp>
+</msg>
+<msg id="34" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\version.dll</arg>
+  <arg>0x731e0000</arg>
+  <arg>0x731e7fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:50 2019</timestamp>
+</msg>
+<msg id="35" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\shcore.dll</arg>
+  <arg>0x747f0000</arg>
+  <arg>0x74873fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:50 2019</timestamp>
+</msg>
+<msg id="36" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\windows.storage.dll</arg>
+  <arg>0x74c60000</arg>
+  <arg>0x75223fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:50 2019</timestamp>
+</msg>
+<msg id="37" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\profapi.dll</arg>
+  <arg>0x74880000</arg>
+  <arg>0x74896fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:50 2019</timestamp>
+</msg>
+<msg id="38" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\powrprof.dll</arg>
+  <arg>0x754e0000</arg>
+  <arg>0x75522fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:50 2019</timestamp>
+</msg>
+<msg id="39" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\umpdc.dll</arg>
+  <arg>0x75a60000</arg>
+  <arg>0x75a6cfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:50 2019</timestamp>
+</msg>
+<msg id="40" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\shlwapi.dll</arg>
+  <arg>0x75230000</arg>
+  <arg>0x75273fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:50 2019</timestamp>
+</msg>
+<msg id="41" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\kernel.appcore.dll</arg>
+  <arg>0x76660000</arg>
+  <arg>0x7666efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:50 2019</timestamp>
+</msg>
+<msg id="42" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\cryptsp.dll</arg>
+  <arg>0x75530000</arg>
+  <arg>0x75542fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:50 2019</timestamp>
+</msg>
+<msg id="43" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\setupapi.dll</arg>
+  <arg>0x75550000</arg>
+  <arg>0x75998fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:50 2019</timestamp>
+</msg>
+<msg id="44" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\bcrypt.dll</arg>
+  <arg>0x747c0000</arg>
+  <arg>0x747d8fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:50 2019</timestamp>
+</msg>
+<msg id="45" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\ws2_32.dll</arg>
+  <arg>0x767c0000</arg>
+  <arg>0x7681dfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:51 2019</timestamp>
+</msg>
+<msg id="46" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>145359,813,9679,9623</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:51 2019</timestamp>
+</msg>
+<msg id="47" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>5637,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:52 2019</timestamp>
+</msg>
+<msg id="48" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>6822,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:53 2019</timestamp>
+</msg>
+<msg id="49" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>3794,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:54 2019</timestamp>
+</msg>
+<msg id="50" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\dwmapi.dll</arg>
+  <arg>0x700c0000</arg>
+  <arg>0x700e4fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:54 2019</timestamp>
+</msg>
+<msg id="51" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\uxtheme.dll</arg>
+  <arg>0x742c0000</arg>
+  <arg>0x74339fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:55 2019</timestamp>
+</msg>
+<msg id="52" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>22463,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:55 2019</timestamp>
+</msg>
+<msg id="53" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\dwmapi.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:55 2019</timestamp>
+</msg>
+<msg id="54" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\dxcore.dll</arg>
+  <arg>0x72720000</arg>
+  <arg>0x72738fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:55 2019</timestamp>
+</msg>
+<msg id="55" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\nvapi.dll</arg>
+  <arg>0x50b70000</arg>
+  <arg>0x50fc4fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:55 2019</timestamp>
+</msg>
+<msg id="56" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\dxgi.dll</arg>
+  <arg>0x664d0000</arg>
+  <arg>0x66590fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:55 2019</timestamp>
+</msg>
+<msg id="57" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\mscms.dll</arg>
+  <arg>0x50ad0000</arg>
+  <arg>0x50b63fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:55 2019</timestamp>
+</msg>
+<msg id="58" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\userenv.dll</arg>
+  <arg>0x746d0000</arg>
+  <arg>0x746edfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:55 2019</timestamp>
+</msg>
+<msg id="59" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\coloradapterclient.dll</arg>
+  <arg>0x50ab0000</arg>
+  <arg>0x50ac0fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:55 2019</timestamp>
+</msg>
+<msg id="60" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\oleaut32.dll</arg>
+  <arg>0x75a70000</arg>
+  <arg>0x75b01fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:55 2019</timestamp>
+</msg>
+<msg id="61" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>25639,5130,6808,8566</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:56 2019</timestamp>
+</msg>
+<msg id="62" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>7146,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:57 2019</timestamp>
+</msg>
+<msg id="63" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>4032,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:58 2019</timestamp>
+</msg>
+<msg id="64" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>4401,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:54:59 2019</timestamp>
+</msg>
+<msg id="65" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\intelopencl32.dll</arg>
+  <arg>0x10ea0000</arg>
+  <arg>0x10eeefff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:00 2019</timestamp>
+</msg>
+<msg id="66" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\IntelOpenCL32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:00 2019</timestamp>
+</msg>
+<msg id="67" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\intelopencl32.dll</arg>
+  <arg>0x10ea0000</arg>
+  <arg>0x10eeefff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:00 2019</timestamp>
+</msg>
+<msg id="68" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>5592,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:00 2019</timestamp>
+</msg>
+<msg id="69" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>7488,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:01 2019</timestamp>
+</msg>
+<msg id="70" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\common files\intel\opencl\bin\x86\intelocl32.dll</arg>
+  <arg>0x11000000</arg>
+  <arg>0x1117bfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:01 2019</timestamp>
+</msg>
+<msg id="71" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x86\intelocl32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:01 2019</timestamp>
+</msg>
+<msg id="72" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\common files\intel\opencl\bin\x86\intelocl32.dll</arg>
+  <arg>0x11000000</arg>
+  <arg>0x1117bfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:01 2019</timestamp>
+</msg>
+<msg id="73" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\common files\intel\opencl\bin\x86\task_executor32.dll</arg>
+  <arg>0x111f0000</arg>
+  <arg>0x1126efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:01 2019</timestamp>
+</msg>
+<msg id="74" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\opengl32.dll</arg>
+  <arg>0x51690000</arg>
+  <arg>0x5178efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:01 2019</timestamp>
+</msg>
+<msg id="75" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x86\task_executor32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:01 2019</timestamp>
+</msg>
+<msg id="76" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\glu32.dll</arg>
+  <arg>0x51210000</arg>
+  <arg>0x5124efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:01 2019</timestamp>
+</msg>
+<msg id="77" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\common files\intel\opencl\bin\x86\task_executor32.dll</arg>
+  <arg>0x11290000</arg>
+  <arg>0x1130efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:01 2019</timestamp>
+</msg>
+<msg id="78" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\program files (x86)\intelswtools\inspector 2019\bin32\runtime\libittnotify.dll</arg>
+  <arg>0x11310000</arg>
+  <arg>0x1133cfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:02 2019</timestamp>
+</msg>
+<msg id="79" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Program Files (x86)\IntelSWTools\Inspector 2019\bin32\runtime\libittnotify.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:02 2019</timestamp>
+</msg>
+<msg id="80" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\program files (x86)\intelswtools\inspector 2019\bin32\runtime\libittnotify.dll</arg>
+  <arg>0x11310000</arg>
+  <arg>0x1133cfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:02 2019</timestamp>
+</msg>
+<msg id="81" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>11363,3479,868,50</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:02 2019</timestamp>
+</msg>
+<msg id="82" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>22616,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:03 2019</timestamp>
+</msg>
+<msg id="83" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>14648,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:04 2019</timestamp>
+</msg>
+<msg id="84" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\common files\intel\opencl\bin\x86\cpu_device32.dll</arg>
+  <arg>0x11520000</arg>
+  <arg>0x115c2fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:04 2019</timestamp>
+</msg>
+<msg id="85" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x86\cpu_device32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:04 2019</timestamp>
+</msg>
+<msg id="86" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\common files\intel\opencl\bin\x86\cpu_device32.dll</arg>
+  <arg>0x11520000</arg>
+  <arg>0x115c2fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:04 2019</timestamp>
+</msg>
+<msg id="87" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>52535,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:05 2019</timestamp>
+</msg>
+<msg id="88" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\igdrcl32.dll</arg>
+  <arg>0x117a0000</arg>
+  <arg>0x11bd5fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:06 2019</timestamp>
+</msg>
+<msg id="89" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\igdrcl32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:06 2019</timestamp>
+</msg>
+<msg id="90" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\igdrcl32.dll</arg>
+  <arg>0x117a0000</arg>
+  <arg>0x11bd5fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:06 2019</timestamp>
+</msg>
+<msg id="91" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>11361,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:06 2019</timestamp>
+</msg>
+<msg id="92" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\resourcepolicyclient.dll</arg>
+  <arg>0x56080000</arg>
+  <arg>0x5608efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:07 2019</timestamp>
+</msg>
+<msg id="93" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>10924,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:07 2019</timestamp>
+</msg>
+<msg id="94" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>3691,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:08 2019</timestamp>
+</msg>
+<msg id="95" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\ResourcePolicyClient.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:08 2019</timestamp>
+</msg>
+<msg id="96" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>4358,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:09 2019</timestamp>
+</msg>
+<msg id="97" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\system32\driverstore\filerepository\nvami.inf_amd64_647dff284c83a66c\nvdlist.dll</arg>
+  <arg>0x12170000</arg>
+  <arg>0x1219afff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:09 2019</timestamp>
+</msg>
+<msg id="98" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\System32\DriverStore\FileRepository\nvami.inf_amd64_647dff284c83a66c\nvdlist.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:09 2019</timestamp>
+</msg>
+<msg id="99" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\system32\driverstore\filerepository\nvami.inf_amd64_647dff284c83a66c\nvdlist.dll</arg>
+  <arg>0x12170000</arg>
+  <arg>0x1219afff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:09 2019</timestamp>
+</msg>
+<msg id="100" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>27861,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:10 2019</timestamp>
+</msg>
+<msg id="101" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\System32\DriverStore\FileRepository\nvami.inf_amd64_647dff284c83a66c\nvdlist.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:11 2019</timestamp>
+</msg>
+<msg id="102" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>27981,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:11 2019</timestamp>
+</msg>
+<msg id="103" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848</arg>
+  <arg>0,1,1,1</arg>
+  <arg>18372,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:12 2019</timestamp>
+</msg>
+<msg id="104" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\igdfcl32.dll</arg>
+  <arg>0x13040000</arg>
+  <arg>0x13077fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:13 2019</timestamp>
+</msg>
+<msg id="105" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\igdfcl32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:13 2019</timestamp>
+</msg>
+<msg id="106" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\igdfcl32.dll</arg>
+  <arg>0x13040000</arg>
+  <arg>0x13077fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:13 2019</timestamp>
+</msg>
+<msg id="107" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>10476,0,0,0,1820</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:13 2019</timestamp>
+</msg>
+<msg id="108" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\igdmcl32.dll</arg>
+  <arg>0x130c0000</arg>
+  <arg>0x1348ffff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:13 2019</timestamp>
+</msg>
+<msg id="109" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\igdmcl32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:13 2019</timestamp>
+</msg>
+<msg id="110" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\igdmcl32.dll</arg>
+  <arg>0x130c0000</arg>
+  <arg>0x1348ffff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:13 2019</timestamp>
+</msg>
+<msg id="111" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\dbghelp.dll</arg>
+  <arg>0x734a0000</arg>
+  <arg>0x7362efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:13 2019</timestamp>
+</msg>
+<msg id="112" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>14548,2492,0,562,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:14 2019</timestamp>
+</msg>
+<msg id="113" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>10925,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:15 2019</timestamp>
+</msg>
+<msg id="114" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\igdbcl32.dll</arg>
+  <arg>0x13650000</arg>
+  <arg>0x136affff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:15 2019</timestamp>
+</msg>
+<msg id="115" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\igdbcl32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:15 2019</timestamp>
+</msg>
+<msg id="116" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\igdbcl32.dll</arg>
+  <arg>0x13650000</arg>
+  <arg>0x136affff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:15 2019</timestamp>
+</msg>
+<msg id="117" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\igdusc32.dll</arg>
+  <arg>0x5f8d0000</arg>
+  <arg>0x60199fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:15 2019</timestamp>
+</msg>
+<msg id="118" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>19045,128,202,425,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:16 2019</timestamp>
+</msg>
+<msg id="119" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\amd app sdk\3.0\bin\x86\amdocl.dll</arg>
+  <arg>0x13a00000</arg>
+  <arg>0x16012fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:16 2019</timestamp>
+</msg>
+<msg id="120" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Program Files (x86)\AMD APP SDK\3.0\bin\x86\amdocl.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:16 2019</timestamp>
+</msg>
+<msg id="121" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\amd app sdk\3.0\bin\x86\amdocl.dll</arg>
+  <arg>0x13a00000</arg>
+  <arg>0x16012fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:16 2019</timestamp>
+</msg>
+<msg id="122" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>10695,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:17 2019</timestamp>
+</msg>
+<msg id="123" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>6703,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:18 2019</timestamp>
+</msg>
+<msg id="124" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>5818,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:19 2019</timestamp>
+</msg>
+<msg id="125" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>13669,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:20 2019</timestamp>
+</msg>
+<msg id="126" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\amd app sdk\3.0\bin\x86\amdocl12cl.dll</arg>
+  <arg>0x16380000</arg>
+  <arg>0x17920fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:20 2019</timestamp>
+</msg>
+<msg id="127" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Program Files (x86)\AMD APP SDK\3.0\bin\x86\amdocl12cl.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:20 2019</timestamp>
+</msg>
+<msg id="128" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\amd app sdk\3.0\bin\x86\amdocl12cl.dll</arg>
+  <arg>0x16380000</arg>
+  <arg>0x17920fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:20 2019</timestamp>
+</msg>
+<msg id="129" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>13794,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:21 2019</timestamp>
+</msg>
+<msg id="130" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>5073,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:22 2019</timestamp>
+</msg>
+<msg id="131" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>14288,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:23 2019</timestamp>
+</msg>
+<msg id="132" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>49786,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:24 2019</timestamp>
+</msg>
+<msg id="133" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\winmm.dll</arg>
+  <arg>0x74370000</arg>
+  <arg>0x74393fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:24 2019</timestamp>
+</msg>
+<msg id="134" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\winmmbase.dll</arg>
+  <arg>0x74340000</arg>
+  <arg>0x74362fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:24 2019</timestamp>
+</msg>
+<msg id="135" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\dwmapi.dll</arg>
+  <arg>0x700c0000</arg>
+  <arg>0x700e4fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:24 2019</timestamp>
+</msg>
+<msg id="136" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\devobj.dll</arg>
+  <arg>0x74650000</arg>
+  <arg>0x74672fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:24 2019</timestamp>
+</msg>
+<msg id="137" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>26170,2657,190,113,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:25 2019</timestamp>
+</msg>
+<msg id="138" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\wintrust.dll</arg>
+  <arg>0x76670000</arg>
+  <arg>0x766b5fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:25 2019</timestamp>
+</msg>
+<msg id="139" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\msasn1.dll</arg>
+  <arg>0x76980000</arg>
+  <arg>0x7698dfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:25 2019</timestamp>
+</msg>
+<msg id="140" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\crypt32.dll</arg>
+  <arg>0x76990000</arg>
+  <arg>0x76a8afff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:25 2019</timestamp>
+</msg>
+<msg id="141" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>17353,797,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:26 2019</timestamp>
+</msg>
+<msg id="142" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\intelopenclprofiler.dll</arg>
+  <arg>0x17d80000</arg>
+  <arg>0x17f29fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:26 2019</timestamp>
+</msg>
+<msg id="143" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\IntelOpenCLProfiler.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:26 2019</timestamp>
+</msg>
+<msg id="144" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\intelopenclprofiler.dll</arg>
+  <arg>0x17d80000</arg>
+  <arg>0x17f29fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:26 2019</timestamp>
+</msg>
+<msg id="145" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>30139,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:27 2019</timestamp>
+</msg>
+<msg id="146" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>15390,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:28 2019</timestamp>
+</msg>
+<msg id="147" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>30451,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:29 2019</timestamp>
+</msg>
+<msg id="148" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184</arg>
+  <arg>0,1,1,1,1</arg>
+  <arg>113473,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:30 2019</timestamp>
+</msg>
+<msg id="149" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128</arg>
+  <arg>0,1,1,1,1,1</arg>
+  <arg>1520,0,0,0,0,2611</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:31 2019</timestamp>
+</msg>
+<msg id="150" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936</arg>
+  <arg>0,1,1,1,1,1,1</arg>
+  <arg>4744,0,0,0,0,243,2319</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:32 2019</timestamp>
+</msg>
+<msg id="151" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936</arg>
+  <arg>0,1,1,1,1,1,1</arg>
+  <arg>8254,0,0,0,0,722,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:33 2019</timestamp>
+</msg>
+<msg id="152" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220</arg>
+  <arg>0,1,1,1,1,1,1,1</arg>
+  <arg>21821,0,0,0,0,513,0,2483</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:34 2019</timestamp>
+</msg>
+<msg id="153" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220</arg>
+  <arg>0,1,1,1,1,1,1,1</arg>
+  <arg>10609,0,0,0,0,570,0,54</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:35 2019</timestamp>
+</msg>
+<msg id="154" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220</arg>
+  <arg>0,1,1,1,1,1,1,1</arg>
+  <arg>4649,0,0,0,0,513,0,54</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:36 2019</timestamp>
+</msg>
+<msg id="155" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220</arg>
+  <arg>0,1,1,1,1,1,1,1</arg>
+  <arg>4052,0,0,0,0,513,0,54</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:37 2019</timestamp>
+</msg>
+<msg id="156" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220</arg>
+  <arg>0,1,1,1,1,1,1,1</arg>
+  <arg>20290,0,0,0,0,513,0,54</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:38 2019</timestamp>
+</msg>
+<msg id="157" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220,2684,5296</arg>
+  <arg>0,1,1,1,1,1,1,1,1,1</arg>
+  <arg>207235,0,0,0,0,570,0,54,2775,2429</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:39 2019</timestamp>
+</msg>
+<msg id="158" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220,2684,5296</arg>
+  <arg>0,1,1,1,1,1,1,1,1,1</arg>
+  <arg>958785,0,0,0,0,570,0,54,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:40 2019</timestamp>
+</msg>
+<msg id="159" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220,2684,5296</arg>
+  <arg>0,1,1,1,1,1,1,1,1,1</arg>
+  <arg>19263,0,0,0,0,513,0,54,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:41 2019</timestamp>
+</msg>
+<msg id="160" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220,2684,5296</arg>
+  <arg>0,1,1,1,1,1,1,1,1,1</arg>
+  <arg>43052,0,0,0,0,513,0,54,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:42 2019</timestamp>
+</msg>
+<msg id="161" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220,2684,5296</arg>
+  <arg>0,1,1,1,1,1,1,1,1,1</arg>
+  <arg>58610,0,0,0,0,561,0,54,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:43 2019</timestamp>
+</msg>
+<msg id="162" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220,2684,5296</arg>
+  <arg>0,1,1,1,1,1,1,1,1,1</arg>
+  <arg>83529,0,0,0,0,513,0,54,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:44 2019</timestamp>
+</msg>
+<msg id="163" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220,2684,5296</arg>
+  <arg>0,1,1,1,1,1,1,1,1,1</arg>
+  <arg>62689,0,0,0,0,513,0,54,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:45 2019</timestamp>
+</msg>
+<msg id="164" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220,2684,5296,15604,16352,11400,8200,11156</arg>
+  <arg>0,1,1,1,1,1,1,1,1,1,1,1,1,1,1</arg>
+  <arg>122188,0,0,0,0,567,0,54,0,0,2380,2306,2444,2378,2352</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:46 2019</timestamp>
+</msg>
+<msg id="165" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220,2684,5296,15604,16352,11400,8200,11156</arg>
+  <arg>0,1,1,1,1,0,1,1,1,1,1,1,1,1,1</arg>
+  <arg>376749,0,0,0,0,553,0,54,0,0,0,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:47 2019</timestamp>
+</msg>
+<msg id="166" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220,2684,5296,15604,16352,11400,8200,11156</arg>
+  <arg>0,1,1,1,1,1,1,1,1,1,1,1,1,1,1</arg>
+  <arg>395258,0,0,0,0,530,0,54,0,0,0,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:48 2019</timestamp>
+</msg>
+<msg id="167" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220,2684,5296,15604,16352,11400,8200,11156</arg>
+  <arg>0,1,1,1,1,1,1,1,1,1,1,1,1,1,1</arg>
+  <arg>394809,0,0,0,0,513,0,54,0,0,0,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:49 2019</timestamp>
+</msg>
+<msg id="168" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220,2684,5296,15604,16352,11400,8200,11156</arg>
+  <arg>0,1,1,1,1,1,1,1,1,1,1,1,1,1,1</arg>
+  <arg>297144,0,0,0,0,570,0,54,0,0,0,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:50 2019</timestamp>
+</msg>
+<msg id="169" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220,2684,5296,15604,16352,11400,8200,11156</arg>
+  <arg>0,1,1,1,1,1,1,1,1,1,1,0,1,1,1</arg>
+  <arg>7352,0,0,0,0,513,0,74,0,0,1036,2222,1037,1014,1076</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:51 2019</timestamp>
+</msg>
+<msg id="170" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,14128,11936,18220,2684,5296</arg>
+  <arg>0,1,1,1,1,1,1,1,1,1</arg>
+  <arg>126575,0,0,0,0,570,0,72,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:52 2019</timestamp>
+</msg>
+<msg id="171" tool="mc">
+  <type>HEARTBEAT</type>
+  <arg>13840,15748,1996,1848,5184,2684,5296</arg>
+  <arg>0,1,1,1,1,1,1</arg>
+  <arg>61755,0,0,0,0,0,0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:53 2019</timestamp>
+</msg>
+<msg id="172" tool="mc">
+  <type>PROCESS_COMPLETE</type>
+  <arg>d:\github\myopencl\visual studio 2019 project\debug\myopencl.exe</arg>
+  <arg>0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="173" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>D:\GitHub\MyOpenCL\Visual studio 2019 project\Debug\MyOpenCL.exe</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="174" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\KernelBase.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="175" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\kernel32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="176" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\ntdll.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="177" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\ucrtbased.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="178" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\vcruntime140d.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="179" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\msvcp140d.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="180" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\OpenCL.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="181" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\advapi32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="182" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\msvcrt.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="183" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\sechost.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="184" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\rpcrt4.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="185" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\sspicli.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="186" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\cryptbase.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="187" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\bcryptprimitives.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="188" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\cfgmgr32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="189" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\ucrtbase.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="190" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\ole32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="191" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\combase.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="192" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\gdi32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="193" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\win32u.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="194" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\gdi32full.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="195" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\msvcp_win.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="196" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\user32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="197" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\imm32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="198" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\System32\DriverStore\FileRepository\nvami.inf_amd64_647dff284c83a66c\nvopencl32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="199" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\shell32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="200" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\version.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="201" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\SHCore.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="202" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\windows.storage.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="203" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\profapi.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="204" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\powrprof.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="205" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\umpdc.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="206" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\shlwapi.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="207" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\kernel.appcore.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="208" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\cryptsp.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="209" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\setupapi.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="210" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\bcrypt.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="211" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\ws2_32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="212" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\uxtheme.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="213" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\DXCore.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="214" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\nvapi.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="215" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\dxgi.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="216" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\mscms.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="217" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\userenv.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="218" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\coloradapterclient.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="219" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\oleaut32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="220" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\IntelOpenCL32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="221" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x86\intelocl32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="222" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\opengl32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="223" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\glu32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="224" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x86\task_executor32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="225" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Program Files (x86)\IntelSWTools\Inspector 2019\bin32\runtime\libittnotify.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="226" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Program Files (x86)\Common Files\Intel\OpenCL\bin\x86\cpu_device32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="227" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\igdrcl32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="228" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\igdfcl32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="229" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\igdmcl32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="230" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\dbghelp.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="231" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\igdbcl32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="232" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\igdusc32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="233" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Program Files (x86)\AMD APP SDK\3.0\bin\x86\amdocl.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="234" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Program Files (x86)\AMD APP SDK\3.0\bin\x86\amdocl12cl.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="235" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\winmm.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="236" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\winmmbase.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="237" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\dwmapi.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="238" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\devobj.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="239" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\wintrust.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="240" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\msasn1.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="241" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\crypt32.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="242" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\IntelOpenCLProfiler.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="243" tool="mc">
+  <type>ANALYSIS_COMPLETE</type>
+  <arg>d:\github\myopencl\visual studio 2019 project\debug\myopencl.exe</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:55:58 2019</timestamp>
+</msg>
+<msg id="244" tool="runtool">
+  <type>app-exit-code</type>
+  <arg>0</arg>
+</msg>
+<msg id="245" tool="runtool">
+  <type>marker-file</type>
+  <arg>D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\My Inspector Results - MyOpenCL\r006mi3\r006mi3.inspxe</arg>
+</msg>
+<msg id="246" tool="runtool">
+  <type>collector-done</type>
+</msg>
+<msg id="247" tool="runtool">
+  <type>log-end</type>
+  <arg>2019/09/27 04:56:02</arg>
+</msg>
+
+</log>
+

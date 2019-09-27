@@ -5,8 +5,9 @@
 #include "MyOpenCL/MyOpenCL.h"
 int main()
 {
-	MyOpenCL* mocl = new MyOpenCL();//CL_DEVICE_TYPE_ACCELERATOR
-	MY_OPEN_CL_CHECK_ERROR(mocl->Error(), "new MyOpenCL", return -1;)
+	MyOpenCL mocl = MyOpenCL();
+	MY_OPEN_CL_CHECK_ERROR(mocl.Error(), "MyOpenCL",);
+	mocl.~MyOpenCL();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

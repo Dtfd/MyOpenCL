@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="utf-8"?>
+<log version="1.0" tool="runtool">
+
+<msg id="1" tool="runtool">
+  <type>log-start</type>
+  <arg>2019/09/27 04:37:23</arg>
+</msg>
+<msg id="2" tool="runtool">
+  <type>collector-starts</type>
+</msg>
+<msg id="3" tool="runtool">
+  <type>marker-file</type>
+  <arg>D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\My Inspector Results - MyOpenCL\r004mi1\r004mi1.inspxe</arg>
+</msg>
+<msg id="4" tool="mc">
+  <type>EXEC_OF_INTEREST</type>
+  <arg>d:\github\myopencl\visual studio 2019 project\debug\myopencl.exe</arg>
+  <arg>18016</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:23 2019</timestamp>
+</msg>
+<msg id="5" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>d:\github\myopencl\visual studio 2019 project\debug\myopencl.exe</arg>
+  <arg>0x570000</arg>
+  <arg>0x59afff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:23 2019</timestamp>
+</msg>
+<msg id="6" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\kernelbase.dll</arg>
+  <arg>0x75280000</arg>
+  <arg>0x7547bfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:24 2019</timestamp>
+</msg>
+<msg id="7" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\kernel32.dll</arg>
+  <arg>0x76570000</arg>
+  <arg>0x7664ffff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:24 2019</timestamp>
+</msg>
+<msg id="8" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\ntdll.dll</arg>
+  <arg>0x76f40000</arg>
+  <arg>0x770d9fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:24 2019</timestamp>
+</msg>
+<msg id="9" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\intelswtools\inspector 2019\bin32\dnclrprofinfo.dll</arg>
+  <arg>0x55e80000</arg>
+  <arg>0x55ea4fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:24 2019</timestamp>
+</msg>
+<msg id="10" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\opencl.dll</arg>
+  <arg>0x3d00000</arg>
+  <arg>0x3d6efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:24 2019</timestamp>
+</msg>
+<msg id="11" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\advapi32.dll</arg>
+  <arg>0x75b30000</arg>
+  <arg>0x75ba8fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:24 2019</timestamp>
+</msg>
+<msg id="12" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\msvcrt.dll</arg>
+  <arg>0x76850000</arg>
+  <arg>0x7690efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:24 2019</timestamp>
+</msg>
+<msg id="13" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\sechost.dll</arg>
+  <arg>0x74ac0000</arg>
+  <arg>0x74b35fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:24 2019</timestamp>
+</msg>
+<msg id="14" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\rpcrt4.dll</arg>
+  <arg>0x759a0000</arg>
+  <arg>0x75a5afff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:24 2019</timestamp>
+</msg>
+<msg id="15" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\sspicli.dll</arg>
+  <arg>0x74710000</arg>
+  <arg>0x7472ffff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:24 2019</timestamp>
+</msg>
+<msg id="16" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\cryptbase.dll</arg>
+  <arg>0x74700000</arg>
+  <arg>0x74709fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:24 2019</timestamp>
+</msg>
+<msg id="17" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\bcryptprimitives.dll</arg>
+  <arg>0x76dc0000</arg>
+  <arg>0x76e1efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:24 2019</timestamp>
+</msg>
+<msg id="18" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\cfgmgr32.dll</arg>
+  <arg>0x76530000</arg>
+  <arg>0x7656afff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:24 2019</timestamp>
+</msg>
+<msg id="19" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\ucrtbase.dll</arg>
+  <arg>0x74b40000</arg>
+  <arg>0x74c5efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:24 2019</timestamp>
+</msg>
+<msg id="20" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\ole32.dll</arg>
+  <arg>0x762c0000</arg>
+  <arg>0x763b6fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:24 2019</timestamp>
+</msg>
+<msg id="21" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\combase.dll</arg>
+  <arg>0x76a90000</arg>
+  <arg>0x76d05fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:25 2019</timestamp>
+</msg>
+<msg id="22" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\gdi32.dll</arg>
+  <arg>0x76820000</arg>
+  <arg>0x76840fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:25 2019</timestamp>
+</msg>
+<msg id="23" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\win32u.dll</arg>
+  <arg>0x76740000</arg>
+  <arg>0x76756fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:25 2019</timestamp>
+</msg>
+<msg id="24" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\gdi32full.dll</arg>
+  <arg>0x76130000</arg>
+  <arg>0x76289fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:25 2019</timestamp>
+</msg>
+<msg id="25" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\msvcp_win.dll</arg>
+  <arg>0x766c0000</arg>
+  <arg>0x7673bfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:25 2019</timestamp>
+</msg>
+<msg id="26" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\user32.dll</arg>
+  <arg>0x74920000</arg>
+  <arg>0x74ab4fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:25 2019</timestamp>
+</msg>
+<msg id="27" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\msvcp140d.dll</arg>
+  <arg>0x78a40000</arg>
+  <arg>0x78af7fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:26 2019</timestamp>
+</msg>
+<msg id="28" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\vcruntime140d.dll</arg>
+  <arg>0x55e60000</arg>
+  <arg>0x55e7afff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:26 2019</timestamp>
+</msg>
+<msg id="29" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\ucrtbased.dll</arg>
+  <arg>0x78b20000</arg>
+  <arg>0x78c94fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:26 2019</timestamp>
+</msg>
+<msg id="30" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\imm32.dll</arg>
+  <arg>0x76290000</arg>
+  <arg>0x762b4fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:26 2019</timestamp>
+</msg>
+<msg id="31" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\system32\driverstore\filerepository\nvami.inf_amd64_647dff284c83a66c\nvopencl32.dll</arg>
+  <arg>0x78ca0000</arg>
+  <arg>0x7a933fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:26 2019</timestamp>
+</msg>
+<msg id="32" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\shell32.dll</arg>
+  <arg>0x75bb0000</arg>
+  <arg>0x76127fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:26 2019</timestamp>
+</msg>
+<msg id="33" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\shcore.dll</arg>
+  <arg>0x747f0000</arg>
+  <arg>0x74873fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="34" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\windows.storage.dll</arg>
+  <arg>0x74c60000</arg>
+  <arg>0x75223fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="35" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\profapi.dll</arg>
+  <arg>0x74880000</arg>
+  <arg>0x74896fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="36" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\powrprof.dll</arg>
+  <arg>0x754e0000</arg>
+  <arg>0x75522fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="37" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\umpdc.dll</arg>
+  <arg>0x75a60000</arg>
+  <arg>0x75a6cfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="38" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\shlwapi.dll</arg>
+  <arg>0x75230000</arg>
+  <arg>0x75273fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="39" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\kernel.appcore.dll</arg>
+  <arg>0x76660000</arg>
+  <arg>0x7666efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="40" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\cryptsp.dll</arg>
+  <arg>0x75530000</arg>
+  <arg>0x75542fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="41" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\setupapi.dll</arg>
+  <arg>0x75550000</arg>
+  <arg>0x75998fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="42" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\bcrypt.dll</arg>
+  <arg>0x747c0000</arg>
+  <arg>0x747d8fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="43" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\ws2_32.dll</arg>
+  <arg>0x767c0000</arg>
+  <arg>0x7681dfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="44" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\version.dll</arg>
+  <arg>0x731e0000</arg>
+  <arg>0x731e7fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="45" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\dwmapi.dll</arg>
+  <arg>0x700c0000</arg>
+  <arg>0x700e4fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="46" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\uxtheme.dll</arg>
+  <arg>0x742c0000</arg>
+  <arg>0x74339fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="47" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\dwmapi.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="48" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\dxcore.dll</arg>
+  <arg>0x72720000</arg>
+  <arg>0x72738fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="49" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\nvapi.dll</arg>
+  <arg>0x50b70000</arg>
+  <arg>0x50fc4fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:27 2019</timestamp>
+</msg>
+<msg id="50" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\dxgi.dll</arg>
+  <arg>0x664d0000</arg>
+  <arg>0x66590fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:29 2019</timestamp>
+</msg>
+<msg id="51" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\mscms.dll</arg>
+  <arg>0x50ad0000</arg>
+  <arg>0x50b63fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:29 2019</timestamp>
+</msg>
+<msg id="52" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\userenv.dll</arg>
+  <arg>0x746d0000</arg>
+  <arg>0x746edfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:29 2019</timestamp>
+</msg>
+<msg id="53" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\coloradapterclient.dll</arg>
+  <arg>0x50ab0000</arg>
+  <arg>0x50ac0fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:29 2019</timestamp>
+</msg>
+<msg id="54" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\oleaut32.dll</arg>
+  <arg>0x75a70000</arg>
+  <arg>0x75b01fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:29 2019</timestamp>
+</msg>
+<msg id="55" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\intelopencl32.dll</arg>
+  <arg>0x18c0000</arg>
+  <arg>0x190efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:30 2019</timestamp>
+</msg>
+<msg id="56" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\common files\intel\opencl\bin\x86\intelocl32.dll</arg>
+  <arg>0x4a40000</arg>
+  <arg>0x4bbbfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:31 2019</timestamp>
+</msg>
+<msg id="57" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\common files\intel\opencl\bin\x86\task_executor32.dll</arg>
+  <arg>0x4bc0000</arg>
+  <arg>0x4c3efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:32 2019</timestamp>
+</msg>
+<msg id="58" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\opengl32.dll</arg>
+  <arg>0x51690000</arg>
+  <arg>0x5178efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:32 2019</timestamp>
+</msg>
+<msg id="59" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\glu32.dll</arg>
+  <arg>0x51210000</arg>
+  <arg>0x5124efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:32 2019</timestamp>
+</msg>
+<msg id="60" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\program files (x86)\intelswtools\inspector 2019\bin32\runtime\libittnotify.dll</arg>
+  <arg>0x4c60000</arg>
+  <arg>0x4c8cfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:32 2019</timestamp>
+</msg>
+<msg id="61" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\common files\intel\opencl\bin\x86\cpu_device32.dll</arg>
+  <arg>0x4d10000</arg>
+  <arg>0x4db2fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:33 2019</timestamp>
+</msg>
+<msg id="62" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\igdrcl32.dll</arg>
+  <arg>0x7e80000</arg>
+  <arg>0x82b5fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:34 2019</timestamp>
+</msg>
+<msg id="63" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\resourcepolicyclient.dll</arg>
+  <arg>0x56390000</arg>
+  <arg>0x5639efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:34 2019</timestamp>
+</msg>
+<msg id="64" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\SysWOW64\ResourcePolicyClient.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:34 2019</timestamp>
+</msg>
+<msg id="65" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\system32\driverstore\filerepository\nvami.inf_amd64_647dff284c83a66c\nvdlist.dll</arg>
+  <arg>0x4ef0000</arg>
+  <arg>0x4f1afff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:34 2019</timestamp>
+</msg>
+<msg id="66" tool="mc">
+  <type>MODULE_UNLOAD</type>
+  <arg>C:\Windows\System32\DriverStore\FileRepository\nvami.inf_amd64_647dff284c83a66c\nvdlist.dll</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:34 2019</timestamp>
+</msg>
+<msg id="67" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\igdfcl32.dll</arg>
+  <arg>0x8410000</arg>
+  <arg>0x8447fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:35 2019</timestamp>
+</msg>
+<msg id="68" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\igdmcl32.dll</arg>
+  <arg>0x8450000</arg>
+  <arg>0x881ffff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:36 2019</timestamp>
+</msg>
+<msg id="69" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\dbghelp.dll</arg>
+  <arg>0x734a0000</arg>
+  <arg>0x7362efff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:37 2019</timestamp>
+</msg>
+<msg id="70" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\igdbcl32.dll</arg>
+  <arg>0x4640000</arg>
+  <arg>0x469ffff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:38 2019</timestamp>
+</msg>
+<msg id="71" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\igdusc32.dll</arg>
+  <arg>0x5f8d0000</arg>
+  <arg>0x60199fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:39 2019</timestamp>
+</msg>
+<msg id="72" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\amd app sdk\3.0\bin\x86\amdocl.dll</arg>
+  <arg>0xb220000</arg>
+  <arg>0xd832fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:39 2019</timestamp>
+</msg>
+<msg id="73" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\program files (x86)\amd app sdk\3.0\bin\x86\amdocl12cl.dll</arg>
+  <arg>0xd840000</arg>
+  <arg>0xede0fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:39 2019</timestamp>
+</msg>
+<msg id="74" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\winmm.dll</arg>
+  <arg>0x74370000</arg>
+  <arg>0x74393fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:40 2019</timestamp>
+</msg>
+<msg id="75" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\winmmbase.dll</arg>
+  <arg>0x74340000</arg>
+  <arg>0x74362fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:40 2019</timestamp>
+</msg>
+<msg id="76" tool="mc">
+  <type>MODULE_LOAD_NO_ANALYSIS</type>
+  <arg>c:\windows\syswow64\dwmapi.dll</arg>
+  <arg>0x700c0000</arg>
+  <arg>0x700e4fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:40 2019</timestamp>
+</msg>
+<msg id="77" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\devobj.dll</arg>
+  <arg>0x74650000</arg>
+  <arg>0x74672fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:40 2019</timestamp>
+</msg>
+<msg id="78" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\wintrust.dll</arg>
+  <arg>0x76670000</arg>
+  <arg>0x766b5fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:40 2019</timestamp>
+</msg>
+<msg id="79" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\msasn1.dll</arg>
+  <arg>0x76980000</arg>
+  <arg>0x7698dfff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:40 2019</timestamp>
+</msg>
+<msg id="80" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\crypt32.dll</arg>
+  <arg>0x76990000</arg>
+  <arg>0x76a8afff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:40 2019</timestamp>
+</msg>
+<msg id="81" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\intelopenclprofiler.dll</arg>
+  <arg>0x7270000</arg>
+  <arg>0x7419fff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:41 2019</timestamp>
+</msg>
+<msg id="82" tool="mc">
+  <type>MODULE_LOAD</type>
+  <arg>c:\windows\syswow64\nvptxjitcompiler.dll</arg>
+  <arg>0x12510000</arg>
+  <arg>0x12e3afff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:42 2019</timestamp>
+</msg>
+<msg id="83" tool="mc">
+  <type>PROCESS_COMPLETE</type>
+  <arg>d:\github\myopencl\visual studio 2019 project\debug\myopencl.exe</arg>
+  <arg>0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:44 2019</timestamp>
+</msg>
+<msg id="84" tool="mc">
+  <type>ANALYSIS_COMPLETE</type>
+  <arg>d:\github\myopencl\visual studio 2019 project\debug\myopencl.exe</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Sep 27 04:37:44 2019</timestamp>
+</msg>
+<msg id="85" tool="runtool">
+  <type>app-exit-code</type>
+  <arg>0</arg>
+</msg>
+<msg id="86" tool="runtool">
+  <type>marker-file</type>
+  <arg>D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\My Inspector Results - MyOpenCL\r004mi1\r004mi1.inspxe</arg>
+</msg>
+<msg id="87" tool="runtool">
+  <type>collector-done</type>
+</msg>
+<msg id="88" tool="runtool">
+  <type>log-end</type>
+  <arg>2019/09/27 04:37:48</arg>
+</msg>
+
+</log>
+

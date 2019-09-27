@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippets>
+  <file name="D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\MyOpenCL.cpp" md5="ec28295cd0cc0a662498fb5b1d15fbc9">
+    <snippet line="13">
+      <line line="10">    /*Get all platforms*/</line>
+      <line line="11">    allPlatforms = (cl_platform_id*)malloc(sizeAllPlatforms * sizeof(cl_platform_id));</line>
+      <line line="12">    error = clGetPlatformIDs(sizeAllPlatforms, allPlatforms, &amp;numAllPlatforms);</line>
+      <line line="13">    MY_OPEN_CL_CHECK_ERROR_("clGetPlatformIDs", );</line>
+      <line line="14"/>
+    </snippet>
+    <snippet line="51">
+      <line line="48">    if (error == CL_SUCCESS)</line>
+      <line line="49">    {</line>
+      <line line="50">        context = clCreateContext(NULL, 1, &amp;device, NULL, NULL, &amp;error);</line>
+      <line line="51">        MY_OPEN_CL_CHECK_ERROR_("clCreateContext", context = NULL;);</line>
+      <line line="52">    }</line>
+    </snippet>
+    <snippet line="59">
+      <line line="56">        cl_command_queue_properties cqp = CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE;</line>
+      <line line="57">        #pragma warning(suppress : 4996)</line>
+      <line line="58">        queue = clCreateCommandQueue(context, device, cqp, &amp;error);</line>
+      <line line="59">        MY_OPEN_CL_CHECK_ERROR_("clCreateCommandQueue", queue = NULL;);</line>
+      <line line="60">    }</line>
+    </snippet>
+    <snippet line="76">
+      <line line="73">        clReleaseProgram(programs[i]);</line>
+      <line line="74">    }</line>
+      <line line="75">    clReleaseCommandQueue(queue);</line>
+      <line line="76">    clReleaseContext(context);</line>
+      <line line="77">    clReleaseDevice(device);</line>
+    </snippet>
+    <snippet line="77">
+      <line line="74">    }</line>
+      <line line="75">    clReleaseCommandQueue(queue);</line>
+      <line line="76">    clReleaseContext(context);</line>
+      <line line="77">    clReleaseDevice(device);</line>
+      <line line="78"/>
+    </snippet>
+  </file>
+</snippets>
