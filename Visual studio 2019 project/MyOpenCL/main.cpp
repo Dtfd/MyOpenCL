@@ -2,12 +2,23 @@
 //
 
 #include <iostream>
-#include "MyOpenCL/MyOpenCL.h"
+#include "MyOpenCL/Mocl.h"
 int main()
 {
-	MyOpenCL mocl = MyOpenCL();
-	MY_OPEN_CL_CHECK_ERROR(mocl.Error(), "MyOpenCL",);
-	mocl.~MyOpenCL();
+	Mocl::Initialize(CL_DEVICE_TYPE_ACCELERATOR);
+	MOCL_CHECK_ERROR (Mocl::Error(),"Initialize",);
+	std::cout << "CPU" << std::endl;
+	std::cout << Mocl::RoundToMaxWorkGroupSizeMultiple(1) << std::endl;
+	std::cout << Mocl::RoundToMaxWorkGroupSizeSqrtMultiple(1) << std::endl;
+	std::cout << Mocl::RoundToMaxWorkGroupSizeCbrtMultiple(1) << std::endl;
+	Mocl::Destroy();
+	MOCL_CHECK_ERROR (Mocl::Error(),"Destroy",);
+	Mocl::Initialize();
+	MOCL_CHECK_ERROR(Mocl::Error(), "Initialize", );
+	std::cout << "GPU" << std::endl;
+	std::cout << Mocl::RoundToMaxWorkGroupSizeMultiple(1) << std::endl;
+	std::cout << Mocl::RoundToMaxWorkGroupSizeSqrtMultiple(1) << std::endl;
+	std::cout << Mocl::RoundToMaxWorkGroupSizeCbrtMultiple(1) << std::endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

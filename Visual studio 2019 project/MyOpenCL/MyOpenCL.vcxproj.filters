@@ -2,18 +2,21 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyOpenCL\MyOpenCL.cpp">
-      <Filter>MyOpenCL</Filter>
+    <ClCompile Include="MyOpenCL\Mocl.cpp">
+      <Filter>MyOpenCL\Mocl</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="MyOpenCL">
       <UniqueIdentifier>{dfcfbd45-d4b6-44c7-936f-c0d356825a27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MyOpenCL\Mocl">
+      <UniqueIdentifier>{79e881b7-c9ea-4daf-b15f-b11b6963d967}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyOpenCL\MyOpenCL.h">
-      <Filter>MyOpenCL</Filter>
+    <ClInclude Include="MyOpenCL\Mocl.h">
+      <Filter>MyOpenCL\Mocl</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

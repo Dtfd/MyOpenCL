@@ -164,10 +164,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyOpenCL\MyOpenCL.cpp" />
+    <ClCompile Include="MyOpenCL\Mocl.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyOpenCL\MyOpenCL.h" />
+    <ClInclude Include="MyOpenCL\Mocl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
