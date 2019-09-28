@@ -1,0 +1,8 @@
+﻿  Mocl.cpp
+  cl2.hpp: CL_HPP_TARGET_OPENCL_VERSION is not defined. It will default to 210 (OpenCL 2.1)
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(53,3): warning C4091:  'static ': ignored on left of 'MyOpenCL::Mocl' when no variable is declared
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(105,4): warning C4003:  not enough arguments for function-like macro invocation 'MOCL_CHECK_ERROR_'
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(110,4): warning C4003:  not enough arguments for function-like macro invocation 'MOCL_CHECK_ERROR_'
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(199,12): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(200,16): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
+  MyOpenCL.vcxproj -> D:\GitHub\MyOpenCL\Visual studio 2019 project\x64\Debug\MyOpenCL.exe

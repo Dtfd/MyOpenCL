@@ -1,39 +1,8 @@
-﻿  main.cpp
+﻿  Mocl.cpp
   cl2.hpp: CL_HPP_TARGET_OPENCL_VERSION is not defined. It will default to 210 (OpenCL 2.1)
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(54,2): warning C4091:  'static ': ignored on left of 'Mocl' when no variable is declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(93,61): error C2535:  'void VectorMath::Add(cl_mem *,cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(92): message :  see declaration of 'VectorMath::Add'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(94,61): error C2535:  'void VectorMath::Add(cl_mem *,cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(92): message :  see declaration of 'VectorMath::Add'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(97,50): error C2535:  'void VectorMath::Add(cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(96): message :  see declaration of 'VectorMath::Add'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(98,50): error C2535:  'void VectorMath::Add(cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(96): message :  see declaration of 'VectorMath::Add'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(101,61): error C2535:  'void VectorMath::Sub(cl_mem *,cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(100): message :  see declaration of 'VectorMath::Sub'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(102,61): error C2535:  'void VectorMath::Sub(cl_mem *,cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(100): message :  see declaration of 'VectorMath::Sub'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(105,50): error C2535:  'void VectorMath::Sub(cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(104): message :  see declaration of 'VectorMath::Sub'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(106,50): error C2535:  'void VectorMath::Sub(cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(104): message :  see declaration of 'VectorMath::Sub'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(109,62): error C2535:  'void VectorMath::Mult(cl_mem *,cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(108): message :  see declaration of 'VectorMath::Mult'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(110,62): error C2535:  'void VectorMath::Mult(cl_mem *,cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(108): message :  see declaration of 'VectorMath::Mult'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(113,51): error C2535:  'void VectorMath::Mult(cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(112): message :  see declaration of 'VectorMath::Mult'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(114,51): error C2535:  'void VectorMath::Mult(cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(112): message :  see declaration of 'VectorMath::Mult'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(117,61): error C2535:  'void VectorMath::Div(cl_mem *,cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(116): message :  see declaration of 'VectorMath::Div'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(118,61): error C2535:  'void VectorMath::Div(cl_mem *,cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(116): message :  see declaration of 'VectorMath::Div'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(121,50): error C2535:  'void VectorMath::Div(cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(120): message :  see declaration of 'VectorMath::Div'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(122,50): error C2535:  'void VectorMath::Div(cl_mem *,cl_mem *,cl_mem *)': member function already defined or declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(120): message :  see declaration of 'VectorMath::Div'
-  Mocl.cpp
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(127,2): warning C4091:  'static ': ignored on left of 'VectorMath' when no variable is declared
-  Generating Code...
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(1,10): error C1083:  Cannot open include file: 'MyOpenCL.h': No such file or directory
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(53,3): warning C4091:  'static ': ignored on left of 'MyOpenCL::Mocl' when no variable is declared
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(105,4): warning C4003:  not enough arguments for function-like macro invocation 'MOCL_CHECK_ERROR_'
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(110,4): warning C4003:  not enough arguments for function-like macro invocation 'MOCL_CHECK_ERROR_'
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(191,24): warning C4018:  '<': signed/unsigned mismatch
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(228,24): warning C4018:  '<': signed/unsigned mismatch
+  MyOpenCL.vcxproj -> D:\GitHub\MyOpenCL\Visual studio 2019 project\Debug\MyOpenCL.exe

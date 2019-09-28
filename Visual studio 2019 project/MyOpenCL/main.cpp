@@ -5,20 +5,11 @@
 #include "MyOpenCL/Mocl.h"
 int main()
 {
-	Mocl::Initialize(CL_DEVICE_TYPE_ACCELERATOR);
-	MOCL_CHECK_ERROR (Mocl::Error(),"Initialize",);
-	std::cout << "CPU" << std::endl;
-	std::cout << Mocl::RoundToMaxWorkGroupSizeMultiple(1) << std::endl;
-	std::cout << Mocl::RoundToMaxWorkGroupSizeSqrtMultiple(1) << std::endl;
-	std::cout << Mocl::RoundToMaxWorkGroupSizeCbrtMultiple(1) << std::endl;
-	Mocl::Destroy();
-	MOCL_CHECK_ERROR (Mocl::Error(),"Destroy",);
-	Mocl::Initialize();
-	MOCL_CHECK_ERROR(Mocl::Error(), "Initialize", );
-	std::cout << "GPU" << std::endl;
-	std::cout << Mocl::RoundToMaxWorkGroupSizeMultiple(1) << std::endl;
-	std::cout << Mocl::RoundToMaxWorkGroupSizeSqrtMultiple(1) << std::endl;
-	std::cout << Mocl::RoundToMaxWorkGroupSizeCbrtMultiple(1) << std::endl;
+	MyOpenCL::Mocl::Initialize(CL_DEVICE_TYPE_ACCELERATOR);
+	MOCL_CHECK_ERROR (MyOpenCL::Mocl::Error(),"Initialize",);
+	MyOpenCL::Mocl::Test();
+	MyOpenCL::Mocl::Destroy();
+	MOCL_CHECK_ERROR (MyOpenCL::Mocl::Error(),"Destroy",);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

@@ -17,38 +17,39 @@
 
 #define MOCL_ASSERT_INITIALIZED if(Mocl::initialized != true){error = MOCL_NOT_INITIALIZED; return;}
 
-static class Mocl
+namespace MyOpenCL
 {
-/*Variables*/
-protected:
-	static bool initialized;
-	static cl_int error;
+	static class Mocl
+	{
+		/*Variables*/
+	protected:
+		static bool initialized;
+		static cl_int error;
 
-	static size_t localWorkGroupSize;
-	static size_t localWorkGroupSizeSqrt;
-	static size_t localWorkGroupSizeCbrt;
+		static size_t localWorkGroupSize;
+		static size_t localWorkGroupSizeSqrt;
+		static size_t localWorkGroupSizeCbrt;
 
-	static cl_platform_id platform;
-	static cl_device_id device;
-	static cl_context context;
-	static cl_command_queue queue;
+		static cl_platform_id platform;
+		static cl_device_id device;
+		static cl_context context;
+		static cl_command_queue queue;
 
-	static std::map<const char*, cl_program> programs;
-	static std::map<const char*, cl_kernel>  kernels;
-/*Functions*/
-public:
-	static void Initialize(cl_device_type clDeviceType = CL_DEVICE_TYPE_GPU);
-	static void Destroy();
-	static cl_int Error();
+		static std::map<const char*, cl_program> programs;
+		static std::map<const char*, cl_kernel>  kernels;
+		/*Functions*/
+	public:
+		static void Initialize(cl_device_type clDeviceType = CL_DEVICE_TYPE_GPU);
+		static void Destroy();
+		static cl_int Error();
 
-	static size_t RoundToMaxWorkGroupSizeMultiple(int n);
-	static size_t RoundToMaxWorkGroupSizeSqrtMultiple(int n);
-	static size_t RoundToMaxWorkGroupSizeCbrtMultiple(int n);
-protected:
-	static int AddProgramWithSource(const char* buildOptions, const char* programSource);
-	static int AddProgramWithSource(cl_uint count, const char** strings, const size_t* lengths, const char* buildOptions);
-	
-	static int AddKernel(cl_program program, const char* kernel_name);
-	static int AddKernel(const char* kernel_name, const char* buildOptions, const char* programSource);
-public:
-};
+		static size_t RoundToMaxWorkGroupSizeMultiple(int n);
+		static size_t RoundToMaxWorkGroupSizeSqrtMultiple(int n);
+		static size_t RoundToMaxWorkGroupSizeCbrtMultiple(int n); 
+		static size_t PreviousPowerOfTwo(size_t x);
+		static void Test();
+	protected:
+		
+	};
+
+}
