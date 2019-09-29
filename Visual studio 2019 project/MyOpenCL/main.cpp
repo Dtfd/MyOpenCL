@@ -2,14 +2,56 @@
 //
 
 #include <iostream>
+#include <string>
+#include <sstream>
+#include <fstream>
+#include <streambuf>
 #include "MyOpenCL/Mocl.h"
+void main000() {
+
+	MyOpenCL::Mocl::Initialize(CL_DEVICE_TYPE_ACCELERATOR);
+	MOCL_CHECK_ERROR(MyOpenCL::Mocl::Error(), "Initialize", );
+	MyOpenCL::Mocl::Test2();
+	MyOpenCL::Mocl::Destroy();
+	MOCL_CHECK_ERROR(MyOpenCL::Mocl::Error(), "Destroy", );
+}
+
+void main001() {
+	std::ifstream t("file.txt");
+	std::string str((std::istreambuf_iterator<char>(t)),
+		std::istreambuf_iterator<char>());
+	std::cout << str << std::endl;
+}
+void main002() {
+	std::ifstream inFile;
+	inFile.open("file.txt"); //open the input file
+
+	std::stringstream strStream;
+	strStream << inFile.rdbuf(); //read the file
+	std::string str = strStream.str(); //str holds the content of the file
+
+	std::cout << str << "\n";
+	inFile.close();
+}
+void main003() {
+
+	std::string line;
+	std::ifstream myfile("file.txt");
+	if (myfile.is_open())
+	{
+		while (std::getline(myfile, line))
+		{
+			std::cout << line << '\n';
+		}
+		myfile.close();
+	}
+
+	else std::cout << "Unable to open file";
+}
 int main()
 {
-	MyOpenCL::Mocl::Initialize(CL_DEVICE_TYPE_ACCELERATOR);
-	MOCL_CHECK_ERROR (MyOpenCL::Mocl::Error(),"Initialize",);
-	MyOpenCL::Mocl::Test();
-	MyOpenCL::Mocl::Destroy();
-	MOCL_CHECK_ERROR (MyOpenCL::Mocl::Error(),"Destroy",);
+	main000();
+	std::cin.ignore();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

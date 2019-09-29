@@ -7,16 +7,19 @@ namespace MyOpenCL
 	cl_int Mocl::error = 0;
 
 	size_t Mocl::localWorkGroupSize = 0;
-	size_t Mocl::localWorkGroupSizeSqrt = 0;
-	size_t Mocl::localWorkGroupSizeCbrt = 0;
+	size_t* Mocl::localWorkGroupSizeSqrt = nullptr;
+	size_t* Mocl::localWorkGroupSizeCbrt = nullptr;
+
+	size_t Mocl::RoundToMaxWorkGroupSizeSqrtMultipleHelper = 0;
+	size_t Mocl::RoundToMaxWorkGroupSizeCbrtMultipleHelper = 0;
 
 	cl_platform_id Mocl::platform = NULL;
 	cl_device_id Mocl::device = NULL;
 	cl_context Mocl::context = NULL;
 	cl_command_queue Mocl::queue = NULL;
 
-	std::map<const char*, cl_program> Mocl::programs = std::map<const char*, cl_program>();
-	std::map<const char*, cl_kernel>  Mocl::kernels = std::map<const char*, cl_kernel>();
+	std::map<std::string, cl_program> Mocl::programs = std::map<std::string, cl_program>();
+	std::map<std::string, cl_kernel>  Mocl::kernels = std::map<std::string, cl_kernel>();
 
 	void Mocl::Initialize(cl_device_type clDeviceType)
 	{
@@ -67,10 +70,18 @@ namespace MyOpenCL
 		/*Get max local work group size for dimentions 1-3*/
 		if (error == CL_SUCCESS)
 		{
+			localWorkGroupSizeSqrt = (size_t*)malloc(2 * sizeof(size_t));
+			localWorkGroupSizeCbrt = (size_t*)malloc(3 * sizeof(size_t));
 			error = cl::Device(device).getInfo<size_t>(CL_DEVICE_MAX_WORK_GROUP_SIZE, &localWorkGroupSize);
 			MOCL_CHECK_ERROR_("cl::Device(device).getInfo", );
-			localWorkGroupSizeSqrt = PreviousPowerOfTwo((size_t)sqrt(localWorkGroupSize));
-			localWorkGroupSizeCbrt = PreviousPowerOfTwo((size_t)cbrt(localWorkGroupSize));
+			localWorkGroupSizeSqrt[0] = PreviousPowerOfTwo((size_t)sqrt(localWorkGroupSize));
+			localWorkGroupSizeSqrt[1] = PreviousPowerOfTwo((size_t)sqrt(localWorkGroupSize));
+			RoundToMaxWorkGroupSizeSqrtMultipleHelper = localWorkGroupSizeSqrt[0] * localWorkGroupSizeSqrt[0] * localWorkGroupSizeSqrt[0];
+
+			localWorkGroupSizeCbrt[0] = PreviousPowerOfTwo((size_t)cbrt(localWorkGroupSize));
+			localWorkGroupSizeCbrt[1] = PreviousPowerOfTwo((size_t)cbrt(localWorkGroupSize));
+			localWorkGroupSizeCbrt[2] = PreviousPowerOfTwo((size_t)cbrt(localWorkGroupSize));
+			RoundToMaxWorkGroupSizeCbrtMultipleHelper = localWorkGroupSizeCbrt[0] * localWorkGroupSizeCbrt[0] * localWorkGroupSizeCbrt[0];
 		}
 		/*Create context*/
 		if (error == CL_SUCCESS)
@@ -87,6 +98,8 @@ namespace MyOpenCL
 			MOCL_CHECK_ERROR_("clCreateCommandQueue", queue = NULL;);
 		}
 
+		LoadAndCreateKernel("pAdd", "", "Add", "Add.txt");
+		MOCL_CHECK_ERROR_("LoadAndCreateKernel",)
 		//Clean
 		free(allPlatforms);
 		initialized = true;
@@ -99,12 +112,12 @@ namespace MyOpenCL
 			error = MOCL_NOT_INITIALIZED;
 			return;
 		}
-		for (std::map<const char*, cl_kernel>::iterator it = kernels.begin(); it != kernels.end(); it++)
+		for (std::map<std::string, cl_kernel>::iterator it = kernels.begin(); it != kernels.end(); it++)
 		{
 			error = clReleaseKernel(kernels[it->first]);
 			MOCL_CHECK_ERROR_("clReleaseKernel(" << it->second << ")");
 		}
-		for (std::map<const char*, cl_program>::iterator it = programs.begin(); it != programs.end(); it++)
+		for (std::map<std::string, cl_program>::iterator it = programs.begin(); it != programs.end(); it++)
 		{
 			error = clReleaseProgram(programs[it->first]);
 			MOCL_CHECK_ERROR_("clReleaseProgram(" << it->second << ")");
@@ -118,8 +131,12 @@ namespace MyOpenCL
 
 		error = 0;
 		localWorkGroupSize = 0;
-		localWorkGroupSizeSqrt = 0;
-		localWorkGroupSizeCbrt = 0;
+		free(localWorkGroupSizeSqrt);
+		localWorkGroupSizeSqrt = nullptr;
+		free(localWorkGroupSizeCbrt);
+		localWorkGroupSizeCbrt = nullptr;
+		RoundToMaxWorkGroupSizeSqrtMultipleHelper = 0;
+		RoundToMaxWorkGroupSizeCbrtMultipleHelper = 0;
 
 		platform = NULL;
 		device = NULL;
@@ -143,13 +160,12 @@ namespace MyOpenCL
 
 	size_t Mocl::RoundToMaxWorkGroupSizeSqrtMultiple(int n)
 	{
-		return n + (localWorkGroupSizeSqrt - n % localWorkGroupSizeSqrt);
+		return n + (RoundToMaxWorkGroupSizeSqrtMultipleHelper - (n % RoundToMaxWorkGroupSizeSqrtMultipleHelper));
 	}
-
 
 	size_t Mocl::RoundToMaxWorkGroupSizeCbrtMultiple(int n)
 	{
-		return n + (localWorkGroupSizeCbrt - n % localWorkGroupSizeCbrt);
+		return n + (RoundToMaxWorkGroupSizeCbrtMultipleHelper - n % RoundToMaxWorkGroupSizeCbrtMultipleHelper);
 	}
 
 	size_t Mocl::PreviousPowerOfTwo(size_t x)
@@ -197,7 +213,7 @@ namespace MyOpenCL
 		for (size_t i = 0; i < N; i++)
 		{
 			a[i] = i;
-			b[i] = N - i;
+			b[i] -= i;
 		}
 		
 		cl_mem mA = clCreateBuffer(context, CL_MEM_READ_WRITE, N * sizeof(int), NULL, &error);
@@ -264,6 +280,206 @@ namespace MyOpenCL
 		clReleaseEvent(evWrite[1]);
 		clReleaseEvent(evWrite[2]);
 		clReleaseEvent(evRead);
+	}
+
+	void Mocl::Test2()
+	{
+		cl_mem mA;
+		cl_mem mB;
+		cl_mem mN;
+		
+		const char** progS = (const char**)malloc(2 * sizeof(const char*));
+		progS[0] =
+			"__kernel void Add(__global int*a, __global int* b,__global int* n)\n"
+			"{\n"
+			"	int i = get_global_id(0);\n"
+			"	if(i >= n[0]) return;\n"
+			"	a[i] += b[i];\n"
+			"}";
+		progS[1] =
+			"__kernel void Sub(__global int*a, __global int* b,__global int* n)\n"
+			"{\n"
+			"	int i = get_global_id(0);\n"
+			"	if(i >= n[0]) return;\n"
+			"	a[i] -= b[i];\n"
+			"}";
+		
+		size_t progSL[2];
+		progSL[0] = strlen(progS[0]);
+		progSL[1] = strlen(progS[1]);
+		programs.insert({ "P1",clCreateProgramWithSource(context, 2, progS,progSL, &error) });
+		MOCL_CHECK_ERROR_("clCreateProgramWithSource", return; );
+		
+		error = clBuildProgram(programs["P1"], 1, &device, "", NULL, NULL);
+		if (error != CL_SUCCESS) {
+			std::string str;
+			cl::Program(programs["P1"]).getBuildInfo<std::string>(cl::Device(device), CL_PROGRAM_BUILD_LOG, &str);
+			std::cout << str << std::endl;
+		}
+		
+		
+		
+		kernels.insert({ "Add",clCreateKernel(programs["P1"], "Add", &error) });
+		MOCL_CHECK_ERROR_("clCreateKernel(Add)", return; );
+
+		kernels.insert({ "Sub",clCreateKernel(programs["P1"], "Sub", &error) });
+		MOCL_CHECK_ERROR_("clCreateKernel(Sub)", return; );
+
+		int N = 100000;
+		int* a = (int*) malloc(N * sizeof(int));
+		int* b = (int*) malloc(N * sizeof(int));
+		for (size_t i = 0; i < N; i++)
+		{
+			a[i] = i;
+			b[i] = -1* i;
+		}
+		
+		CreateBuffer(&mA, CL_MEM_READ_WRITE, N * sizeof(int), NULL);
+		MOCL_CHECK_ERROR_("clCreateBuffer(a)", return; );
+		CreateBuffer(&mB, CL_MEM_READ_WRITE, N * sizeof(int), NULL);
+		MOCL_CHECK_ERROR_("clCreateBuffer(b)", return; );
+		CreateBuffer(&mN, CL_MEM_READ_WRITE,sizeof(int), NULL);
+		MOCL_CHECK_ERROR_("clCreateBuffer(N)", return; );
+		
+
+		SetKernelArg("Sub", 0, sizeof(cl_mem), &mA);
+		MOCL_CHECK_ERROR_("clSetKernelArg(a)", return; );
+		SetKernelArg("Sub", 1, sizeof(cl_mem), &mB);
+		MOCL_CHECK_ERROR_("clSetKernelArg(b)", return; );		
+		SetKernelArg("Sub", 2, sizeof(cl_mem), &mN);
+		MOCL_CHECK_ERROR_("clSetKernelArg(N)", return; );
+		
+
+		cl_event evWrite[3];
+		EnqueueWriteBuffer(&mA, CL_TRUE, NULL, N * sizeof(int), a, NULL, NULL, evWrite);
+		MOCL_CHECK_ERROR_("clEnqueueWriteBuffer(a)", return; );
+		
+		EnqueueWriteBuffer(&mB, CL_TRUE, NULL, N * sizeof(int), b, NULL, NULL, evWrite+1);
+		MOCL_CHECK_ERROR_("clEnqueueWriteBuffer(b)", return; );
+		
+		EnqueueWriteBuffer(&mN, CL_TRUE, NULL,sizeof(int), &N, NULL, NULL, evWrite+2);
+		MOCL_CHECK_ERROR_("clEnqueueWriteBuffer(c)", return; );
+
+		cl_event evND;
+		size_t Nn = N;
+		Enqueue1DRangeKernel("Sub", NULL, &Nn, 3, evWrite, &evND);
+		MOCL_CHECK_ERROR_("clEnqueueNDRangeKernel(Sub)", return; );
+		
+		cl_event evRead;
+		EnqueueReadBuffer(&mA, CL_TRUE, NULL, N * sizeof(int), a, 1, &evND, &evRead);
+		MOCL_CHECK_ERROR_("clEnqueueReadBuffer(a)", return; );
+		
+		WaitForEvents(&evRead);
+		MOCL_CHECK_ERROR_("clWaitForEvents(evRead)", return; );
+		
+		for (size_t i = 0; i < N; i++)
+		{
+			if (a[i] != N) std::cout << i << " | " << a[i] << std::endl; break;
+		}
+
+		
+		free(a);
+		free(b);
+		clReleaseMemObject(mA);
+		clReleaseMemObject(mB);
+		clReleaseMemObject(mN);
+
+		clReleaseEvent(evND);
+		clReleaseEvent(evWrite[0]);
+		clReleaseEvent(evWrite[1]);
+		clReleaseEvent(evWrite[2]);
+		clReleaseEvent(evRead);
+	}
+
+	void Mocl::LoadAndCreateKernel(std::string programName, const char* programBuildOptions, std::string kernelName, std::string fName, std::string kernelPath)
+	{
+		FILE* fp;
+		const char** source_str;
+		size_t source_size, program_size;
+
+		fp = fopen(fName.c_str(), "rw");
+		if (!fp) {
+			error = MOCL_PATH_NOT_FOUND;
+			return;
+		}
+
+		fseek(fp, 0, SEEK_END);
+		program_size = ftell(fp);
+		rewind(fp);
+		source_str[0] = (char*)malloc(program_size + 1);
+		source_str[0][program_size] = '\0';
+		fread(source_str, sizeof(char), program_size, fp);
+		fclose(fp);
+
+		programs.insert({ programName, clCreateProgramWithSource(context, 1, &source_str, &source_size, &error) });
+		MOCL_CHECK_ERROR_("clCreateProgramWithSource", return; );
+
+		error = clBuildProgram(programs[programName], 1, &device, programBuildOptions, NULL, NULL);
+		if (error != CL_SUCCESS) {
+			std::string str;
+			cl::Program(programs[programName]).getBuildInfo<std::string>(cl::Device(device), CL_PROGRAM_BUILD_LOG, &str);
+			std::cout << str << std::endl;
+		}
+		MOCL_CHECK_ERROR_("clBuildProgram("<<programName<<")", return; );
+
+		kernels.insert({ kernelName,clCreateKernel(programs[programName], kernelName.c_str(), &error) });
+		MOCL_CHECK_ERROR_("clCreateKernel("<<kernelName<<")", return; );
+
+
+
+	}
+
+	void Mocl::CreateBuffer(cl_mem* mem, cl_mem_flags flags, size_t size, void* hostPtr)
+	{
+		*mem = clCreateBuffer(context, flags, size, hostPtr, &error);
+	}
+
+	void Mocl::SetKernelArg(std::string kernelName, cl_uint argIndex, size_t argSize, const void* argValue)
+	{
+		error = clSetKernelArg(kernels[kernelName], argIndex, argSize, argValue);
+	}
+
+	void Mocl::EnqueueWriteBuffer(cl_mem* buffer, cl_bool blockingWrite, size_t offset, size_t size, const void* ptr, cl_uint num_events_in_wait_list, const cl_event* event_wait_list, cl_event* event)
+	{
+		error = clEnqueueWriteBuffer(queue, *buffer, blockingWrite, offset, size, ptr, num_events_in_wait_list, event_wait_list, event);
+	}
+
+	void Mocl::EnqueueReadBuffer(cl_mem* buffer, cl_bool blockingRead, size_t offset, size_t size, void* ptr, cl_uint num_events_in_wait_list, const cl_event* event_wait_list, cl_event* event)
+	{
+		error = clEnqueueReadBuffer(queue, *buffer, blockingRead, offset, size, ptr, num_events_in_wait_list, event_wait_list, event);
+	}
+
+	void Mocl::EnqueueNDRangeKernel(std::string kernelName, cl_uint work_dim, const size_t* global_work_offset, const size_t* global_work_size, const size_t* local_work_size, cl_uint num_events_in_wait_list, const cl_event* event_wait_list, cl_event* event)
+	{
+		error = clEnqueueNDRangeKernel(queue, kernels[kernelName], work_dim, global_work_offset, global_work_size, local_work_size, num_events_in_wait_list, event_wait_list, event);
+	}
+
+	void Mocl::Enqueue1DRangeKernel(std::string kernelName, const size_t* global_work_offset,  size_t* global_work_size, cl_uint num_events_in_wait_list, const cl_event* event_wait_list, cl_event* event)
+	{
+		*global_work_size = RoundToMaxWorkGroupSizeMultiple(*global_work_size);
+		error = clEnqueueNDRangeKernel(queue, kernels[kernelName], 1, global_work_offset, global_work_size, &localWorkGroupSize, num_events_in_wait_list, event_wait_list, event);
+	}
+
+	void Mocl::Enqueue2DRangeKernel(std::string kernelName, const size_t* global_work_offset, size_t* global_work_size, cl_uint num_events_in_wait_list, const cl_event* event_wait_list, cl_event* event)
+	{
+		*global_work_size = RoundToMaxWorkGroupSizeSqrtMultiple(*global_work_size);
+		error = clEnqueueNDRangeKernel(queue, kernels[kernelName], 2, global_work_offset, global_work_size, localWorkGroupSizeSqrt, num_events_in_wait_list, event_wait_list, event);
+	}
+
+	void Mocl::Enqueue3DRangeKernel(std::string kernelName, const size_t* global_work_offset, size_t* global_work_size, cl_uint num_events_in_wait_list, const cl_event* event_wait_list, cl_event* event)
+	{
+		*global_work_size = RoundToMaxWorkGroupSizeCbrtMultiple(*global_work_size);
+		error = clEnqueueNDRangeKernel(queue, kernels[kernelName], 3, global_work_offset, global_work_size, localWorkGroupSizeCbrt, num_events_in_wait_list, event_wait_list, event);
+	}
+
+	void Mocl::WaitForEvents(cl_uint numEvents, cl_event* eventList)
+	{
+		error = clWaitForEvents(numEvents, eventList);
+	}
+
+	void Mocl::WaitForEvents(cl_event* event)
+	{
+		error = clWaitForEvents(1, event);
 	}
 
 }
