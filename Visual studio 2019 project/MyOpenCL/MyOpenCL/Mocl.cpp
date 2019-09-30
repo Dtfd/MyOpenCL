@@ -10,8 +10,6 @@ namespace MyOpenCL
 	size_t* Mocl::localWorkGroupSizeSqrt = nullptr;
 	size_t* Mocl::localWorkGroupSizeCbrt = nullptr;
 
-	size_t Mocl::RoundToMaxWorkGroupSizeSqrtMultipleHelper = 0;
-	size_t Mocl::RoundToMaxWorkGroupSizeCbrtMultipleHelper = 0;
 
 	cl_platform_id Mocl::platform = NULL;
 	cl_device_id Mocl::device = NULL;
@@ -76,12 +74,11 @@ namespace MyOpenCL
 			MOCL_CHECK_ERROR_("cl::Device(device).getInfo", );
 			localWorkGroupSizeSqrt[0] = PreviousPowerOfTwo((size_t)sqrt(localWorkGroupSize));
 			localWorkGroupSizeSqrt[1] = PreviousPowerOfTwo((size_t)sqrt(localWorkGroupSize));
-			RoundToMaxWorkGroupSizeSqrtMultipleHelper = localWorkGroupSizeSqrt[0] * localWorkGroupSizeSqrt[0] * localWorkGroupSizeSqrt[0];
+
 
 			localWorkGroupSizeCbrt[0] = PreviousPowerOfTwo((size_t)cbrt(localWorkGroupSize));
 			localWorkGroupSizeCbrt[1] = PreviousPowerOfTwo((size_t)cbrt(localWorkGroupSize));
 			localWorkGroupSizeCbrt[2] = PreviousPowerOfTwo((size_t)cbrt(localWorkGroupSize));
-			RoundToMaxWorkGroupSizeCbrtMultipleHelper = localWorkGroupSizeCbrt[0] * localWorkGroupSizeCbrt[0] * localWorkGroupSizeCbrt[0];
 		}
 		/*Create context*/
 		if (error == CL_SUCCESS)
@@ -98,7 +95,6 @@ namespace MyOpenCL
 			MOCL_CHECK_ERROR_("clCreateCommandQueue", queue = NULL;);
 		}
 
-		LoadAndCreateKernel("pAdd", "", "Add", "Add.txt");
 		MOCL_CHECK_ERROR_("LoadAndCreateKernel",)
 		//Clean
 		free(allPlatforms);
@@ -135,8 +131,6 @@ namespace MyOpenCL
 		localWorkGroupSizeSqrt = nullptr;
 		free(localWorkGroupSizeCbrt);
 		localWorkGroupSizeCbrt = nullptr;
-		RoundToMaxWorkGroupSizeSqrtMultipleHelper = 0;
-		RoundToMaxWorkGroupSizeCbrtMultipleHelper = 0;
 
 		platform = NULL;
 		device = NULL;
@@ -160,12 +154,12 @@ namespace MyOpenCL
 
 	size_t Mocl::RoundToMaxWorkGroupSizeSqrtMultiple(int n)
 	{
-		return n + (RoundToMaxWorkGroupSizeSqrtMultipleHelper - (n % RoundToMaxWorkGroupSizeSqrtMultipleHelper));
+		return n + (localWorkGroupSizeSqrt[0] - (n % localWorkGroupSizeSqrt[0]));
 	}
 
 	size_t Mocl::RoundToMaxWorkGroupSizeCbrtMultiple(int n)
 	{
-		return n + (RoundToMaxWorkGroupSizeCbrtMultipleHelper - n % RoundToMaxWorkGroupSizeCbrtMultipleHelper);
+		return n + (localWorkGroupSizeCbrt[0] - n % localWorkGroupSizeCbrt[0]);
 	}
 
 	size_t Mocl::PreviousPowerOfTwo(size_t x)
@@ -178,6 +172,79 @@ namespace MyOpenCL
 		x |= (x >> 16);
 		return x - (x >> 1);
 	}
+
+	void Mocl::AddAndBuildProgramWithSource(std::string programName, std::vector<std::string> sources, const char* builOptions)
+	{
+		const char** sourcesCh = (const char**)malloc(sources.size() * sizeof(char*));
+		size_t* sourceLenghts = (size_t*)malloc(sources.size() * sizeof(size_t));
+		for (size_t i = 0; i < sources.size(); i++)
+		{
+			sourcesCh[i] = sources[i].c_str();
+			sourceLenghts[i] = sources[i].length();
+		}
+		programs.insert({ programName,clCreateProgramWithSource(context,sources.size(),sourcesCh,sourceLenghts,&error) });
+		MOCL_CHECK_ERROR_("clCreateProgramWithSource(" << programName << "", );
+		if (error != CL_SUCCESS)
+		{
+			error = clBuildProgram(programs[programName], 1, &device, builOptions, NULL, NULL);
+			if (error != CL_SUCCESS) {
+				std::string str;
+				cl::Program(programs[programName]).getBuildInfo<std::string>(cl::Device(device), CL_PROGRAM_BUILD_LOG, &str);
+				std::cout << str << std::endl;
+			}
+		}
+		/*free(sourceLenghts);
+		for (size_t i = 0; i < sources.size(); i++)
+		{
+			free(&sourcesCh[i]);
+		}
+		free(sourcesCh);*/
+		if (error != CL_SUCCESS)
+		{
+			clReleaseProgram(programs[programName]);
+			programs.erase(programName);
+		}
+
+	}
+
+	void Mocl::AddKernel(std::string kernelName, std::string programName)
+	{
+		MOCL_ASSERT_PROGRAM_LOADED(programName);
+		kernels.insert({ kernelName,clCreateKernel(programs[programName],kernelName.c_str(),&error) });
+		MOCL_CHECK_ERROR_("clCreateKernel(" << kernelName << ")",
+						   clReleaseKernel(kernels[kernelName]);
+						   kernels.erase(kernelName););
+	}
+
+	void Mocl::AddKernels(std::vector<std::string> kernelNames, std::string programName)
+	{
+		for (size_t i = 0; i < kernelNames.size(); i++)
+		{
+			MOCL_ASSERT_PROGRAM_LOADED(programName);
+			kernels.insert({ kernelNames[i],clCreateKernel(programs[programName],kernelNames[i].c_str(),&error) });
+			MOCL_CHECK_ERROR_("clCreateKernel(" << kernelNames[i] << ")", );
+		}
+	}
+
+	void Mocl::AddKernel(std::string kernelName, std::string programName, const char* programBuildOptions, std::string source)
+	{
+		std::vector<std::string> sourceV;
+		sourceV.push_back(source);
+		AddAndBuildProgramWithSource(programName, sourceV, programBuildOptions);
+		MOCL_CHECK_ERROR_("AddAndBuildProgramWithSource(" << programName << ")", 
+						   return;);
+		AddKernel(kernelName, programName);
+		MOCL_CHECK_ERROR_("AddKernel(" << kernelName << ")", );
+	}
+
+	void Mocl::AddKernels(std::vector<std::string> kernelNames, std::string programName, const char* programBuildOptions, std::vector<std::string> sources)
+	{
+		AddAndBuildProgramWithSource(programName, sources, programBuildOptions);
+		MOCL_CHECK_ERROR_("AddAndBuildProgramWithSource(" << programName << ")", );
+		AddKernels(kernelNames, programName);
+		MOCL_CHECK_ERROR_("AddKernels(" << programName << ")", );
+	}
+
 
 	void Mocl::Test()
 	{
@@ -391,43 +458,24 @@ namespace MyOpenCL
 		clReleaseEvent(evRead);
 	}
 
-	void Mocl::LoadAndCreateKernel(std::string programName, const char* programBuildOptions, std::string kernelName, std::string fName, std::string kernelPath)
+	void Mocl::Test3()
 	{
-		FILE* fp;
-		const char** source_str;
-		size_t source_size, program_size;
-
-		fp = fopen(fName.c_str(), "rw");
-		if (!fp) {
-			error = MOCL_PATH_NOT_FOUND;
-			return;
-		}
-
-		fseek(fp, 0, SEEK_END);
-		program_size = ftell(fp);
-		rewind(fp);
-		source_str[0] = (char*)malloc(program_size + 1);
-		source_str[0][program_size] = '\0';
-		fread(source_str, sizeof(char), program_size, fp);
-		fclose(fp);
-
-		programs.insert({ programName, clCreateProgramWithSource(context, 1, &source_str, &source_size, &error) });
-		MOCL_CHECK_ERROR_("clCreateProgramWithSource", return; );
-
-		error = clBuildProgram(programs[programName], 1, &device, programBuildOptions, NULL, NULL);
-		if (error != CL_SUCCESS) {
-			std::string str;
-			cl::Program(programs[programName]).getBuildInfo<std::string>(cl::Device(device), CL_PROGRAM_BUILD_LOG, &str);
-			std::cout << str << std::endl;
-		}
-		MOCL_CHECK_ERROR_("clBuildProgram("<<programName<<")", return; );
-
-		kernels.insert({ kernelName,clCreateKernel(programs[programName], kernelName.c_str(), &error) });
-		MOCL_CHECK_ERROR_("clCreateKernel("<<kernelName<<")", return; );
-
+		std::vector<std::string> sources;
+		sources.push_back("__kernel void Add(__global int*a, __global int* b,__global int* n)\n"
+						  "{\n"
+						  "	int i = get_global_id(0);\n"
+						  "	if(i >= n[0]) return;\n"
+						  "	a[i] += b[i];\n"
+						  "}");
+		AddAndBuildProgramWithSource("pAdd", sources, "");
+		MOCL_CHECK_ERROR_("AddAndBuildProgramWithSource(" << "pAdd" << ")", );
+		AddKernel("Add", "pAdd");
+		MOCL_CHECK_ERROR_("AddKernels(" << "Add" << ")", );
 
 
 	}
+
+	
 
 	void Mocl::CreateBuffer(cl_mem* mem, cl_mem_flags flags, size_t size, void* hostPtr)
 	{
@@ -462,13 +510,16 @@ namespace MyOpenCL
 
 	void Mocl::Enqueue2DRangeKernel(std::string kernelName, const size_t* global_work_offset, size_t* global_work_size, cl_uint num_events_in_wait_list, const cl_event* event_wait_list, cl_event* event)
 	{
-		*global_work_size = RoundToMaxWorkGroupSizeSqrtMultiple(*global_work_size);
+		global_work_size[0] = RoundToMaxWorkGroupSizeSqrtMultiple(*global_work_size);
+		global_work_size[1] = RoundToMaxWorkGroupSizeSqrtMultiple(*global_work_size);
 		error = clEnqueueNDRangeKernel(queue, kernels[kernelName], 2, global_work_offset, global_work_size, localWorkGroupSizeSqrt, num_events_in_wait_list, event_wait_list, event);
 	}
 
 	void Mocl::Enqueue3DRangeKernel(std::string kernelName, const size_t* global_work_offset, size_t* global_work_size, cl_uint num_events_in_wait_list, const cl_event* event_wait_list, cl_event* event)
 	{
-		*global_work_size = RoundToMaxWorkGroupSizeCbrtMultiple(*global_work_size);
+		global_work_size[0] = RoundToMaxWorkGroupSizeCbrtMultiple(*global_work_size);
+		global_work_size[1] = RoundToMaxWorkGroupSizeCbrtMultiple(*global_work_size);
+		global_work_size[2] = RoundToMaxWorkGroupSizeCbrtMultiple(*global_work_size);
 		error = clEnqueueNDRangeKernel(queue, kernels[kernelName], 3, global_work_offset, global_work_size, localWorkGroupSizeCbrt, num_events_in_wait_list, event_wait_list, event);
 	}
 

@@ -1,36 +1,17 @@
 ﻿  Mocl.cpp
   cl2.hpp: CL_HPP_TARGET_OPENCL_VERSION is not defined. It will default to 210 (OpenCL 2.1)
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(127,3): warning C4091:  'static ': ignored on left of 'MyOpenCL::Mocl' when no variable is declared
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(118,4): warning C4003:  not enough arguments for function-like macro invocation 'MOCL_CHECK_ERROR_'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(123,4): warning C4003:  not enough arguments for function-like macro invocation 'MOCL_CHECK_ERROR_'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(215,12): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(216,13): warning C4267:  '-=': conversion from 'size_t' to 'int', possible loss of data
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(333,12): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(334,16): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,105): error C2664:  'cl_program clCreateProgramWithSource(cl_context,cl_uint,const char **,const size_t *,cl_int *)': cannot convert argument 3 from 'char **' to 'const char **'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,72): message :  Conversion loses qualifiers
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): error C2664:  'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::insert(std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>,const std::pair<const _Kty,_Ty> &)': cannot convert argument 1 from 'initializer list' to 'std::pair<const _Kty,_Ty> &&'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): error C2664:         with
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): error C2664:         [
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): error C2664:             _Kty=std::string,
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): error C2664:             _Ty=cl_program,
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): error C2664:             _Pr=std::less<std::string>,
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): error C2664:             _Alloc=std::allocator<std::pair<const std::string,cl_program >>
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): error C2664:         ]
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): error C2664:         and
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): error C2664:         [
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): error C2664:             _Kty=std::string,
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): error C2664:             _Ty=cl_program
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): error C2664:         ]
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): message :  Reason: cannot convert from 'initializer list' to 'std::pair<const _Kty,_Ty>'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): message :         with
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): message :         [
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): message :             _Kty=std::string,
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): message :             _Ty=cl_program
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): message :         ]
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(414,108): message :  No constructor could take the source type, or constructor overload resolution was ambiguous
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(400,2): error C4996:  'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(208): message :  see declaration of 'fopen'
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(459,72): warning C4267:  'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(465,76): warning C4267:  'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(471,76): warning C4267:  'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.h(144,3): warning C4091:  'static ': ignored on left of 'MyOpenCL::Mocl' when no variable is declared
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(114,4): warning C4003:  not enough arguments for function-like macro invocation 'MOCL_CHECK_ERROR_'
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(119,4): warning C4003:  not enough arguments for function-like macro invocation 'MOCL_CHECK_ERROR_'
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(185,112): warning C4267:  'argument': conversion from 'size_t' to 'cl_uint', possible loss of data
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(282,12): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(283,13): warning C4267:  '-=': conversion from 'size_t' to 'int', possible loss of data
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(400,12): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(401,16): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(507,72): warning C4267:  'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(513,78): warning C4267:  'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(514,78): warning C4267:  'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(520,78): warning C4267:  'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(521,78): warning C4267:  'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\GitHub\MyOpenCL\Visual studio 2019 project\MyOpenCL\MyOpenCL\Mocl.cpp(522,78): warning C4267:  'argument': conversion from 'size_t' to 'int', possible loss of data
+  MyOpenCL.vcxproj -> D:\GitHub\MyOpenCL\Visual studio 2019 project\x64\Debug\MyOpenCL.exe
