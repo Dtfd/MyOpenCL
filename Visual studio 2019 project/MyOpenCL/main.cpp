@@ -11,7 +11,7 @@ void main000() {
 
 	MyOpenCL::Mocl::Initialize(CL_DEVICE_TYPE_ACCELERATOR);
 	MOCL_CHECK_ERROR(MyOpenCL::Mocl::Error(), "Initialize", );
-	MyOpenCL::Mocl::Test2();
+	MyOpenCL::Mocl::Test3();
 	MyOpenCL::Mocl::Destroy();
 	MOCL_CHECK_ERROR(MyOpenCL::Mocl::Error(), "Destroy", );
 }
@@ -50,6 +50,7 @@ void main003() {
 }
 int main()
 {
+
 	main000();
 	std::cin.ignore();
 }

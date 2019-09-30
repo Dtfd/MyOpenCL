@@ -44,9 +44,7 @@ namespace MyOpenCL
 
 		static std::map<std::string, cl_program> programs;
 		static std::map<std::string, cl_kernel>  kernels;
-	private:
-		static size_t RoundToMaxWorkGroupSizeSqrtMultipleHelper;
-		static size_t RoundToMaxWorkGroupSizeCbrtMultipleHelper;
+
 		/*Functions*/
 	public:
 		static void Initialize(cl_device_type clDeviceType = CL_DEVICE_TYPE_GPU);
@@ -55,14 +53,33 @@ namespace MyOpenCL
 		/*Debug testing*/
 		static void Test();
 		static void Test2();
+		static void Test3();
 	protected:
-		static void LoadAndCreateKernel(std::string programName, const char* programBuildOptions, std::string kernelName,std::string fName, std::string kernelPath = "KernelsCL/");
-		static void LoadAndCreateKernels(std::vector<std::string> kernelNames, std::string programName, std::string kernelsPath = "KernelsCL/");
-		
+
 		static size_t RoundToMaxWorkGroupSizeMultiple(int n);
 		static size_t RoundToMaxWorkGroupSizeSqrtMultiple(int n);
 		static size_t RoundToMaxWorkGroupSizeCbrtMultiple(int n);
 		static size_t PreviousPowerOfTwo(size_t x);
+
+		static void AddAndBuildProgramWithSource(std::string programName, 
+												 std::vector<std::string> sources,
+												 const char* builOptions);
+
+		static void AddKernel(std::string kernelName, 
+							  std::string programName);
+
+		static void AddKernels(std::vector<std::string> kernelNames, 
+							  std::string programName);
+
+		static void AddKernel(std::string kernelName, 
+							  std::string programName, 
+							  const char* programBuildOptions, 
+							  std::string source);
+
+		static void AddKernels(std::vector<std::string> kernelNames,
+							   std::string programName, 
+							   const char* programBuildOptions, 
+							   std::vector<std::string> sources);
 
 		static void CreateBuffer(cl_mem* mem, 
 							     cl_mem_flags flags,
