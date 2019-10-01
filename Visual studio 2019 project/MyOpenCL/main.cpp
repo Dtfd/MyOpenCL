@@ -11,7 +11,7 @@ void main000() {
 
 	MyOpenCL::Mocl::Initialize(CL_DEVICE_TYPE_ACCELERATOR);
 	MOCL_CHECK_ERROR(MyOpenCL::Mocl::Error(), "Initialize", );
-	MyOpenCL::Mocl::Test3();
+	MyOpenCL::Mocl::Test4();
 	MyOpenCL::Mocl::Destroy();
 	MOCL_CHECK_ERROR(MyOpenCL::Mocl::Error(), "Destroy", );
 }

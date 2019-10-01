@@ -103,11 +103,7 @@ namespace MyOpenCL
 
 	void Mocl::Destroy()
 	{
-		if (initialized == false)
-		{
-			error = MOCL_NOT_INITIALIZED;
-			return;
-		}
+		MOCL_ASSERT_INITIALIZED;
 		for (std::map<std::string, cl_kernel>::iterator it = kernels.begin(); it != kernels.end(); it++)
 		{
 			error = clReleaseKernel(kernels[it->first]);
@@ -147,6 +143,18 @@ namespace MyOpenCL
 		return error;
 	}
 
+	void Mocl::OverrideLocalWorkGroupSize(int n)
+	{
+		localWorkGroupSize = n;
+
+		localWorkGroupSizeSqrt[0] = PreviousPowerOfTwo((size_t)sqrt(localWorkGroupSize));
+		localWorkGroupSizeSqrt[1] = PreviousPowerOfTwo((size_t)sqrt(localWorkGroupSize));
+
+		localWorkGroupSizeCbrt[0] = PreviousPowerOfTwo((size_t)cbrt(localWorkGroupSize));
+		localWorkGroupSizeCbrt[1] = PreviousPowerOfTwo((size_t)cbrt(localWorkGroupSize));
+		localWorkGroupSizeCbrt[2] = PreviousPowerOfTwo((size_t)cbrt(localWorkGroupSize));
+	}
+
 	size_t Mocl::RoundToMaxWorkGroupSizeMultiple(int n)
 	{
 		return n + (localWorkGroupSize - n % localWorkGroupSize);
@@ -175,16 +183,20 @@ namespace MyOpenCL
 
 	void Mocl::AddAndBuildProgramWithSource(std::string programName, std::vector<std::string> sources, const char* builOptions)
 	{
-		const char** sourcesCh = (const char**)malloc(sources.size() * sizeof(char*));
-		size_t* sourceLenghts = (size_t*)malloc(sources.size() * sizeof(size_t));
+		size_t sizeB;
+		char** sourcesCh = (char**)malloc(sources.size() * sizeof(char*));
+		size_t* sourceSizes = (size_t*)malloc(sources.size() * sizeof(size_t));
 		for (size_t i = 0; i < sources.size(); i++)
 		{
-			sourcesCh[i] = sources[i].c_str();
-			sourceLenghts[i] = sources[i].length();
+			sourceSizes[i] = sources[i].size();
+			sizeB = sources[i].size() * sizeof(char);
+			sourcesCh[i] = (char*)malloc(sizeB);
+#pragma warning(suppress : 4996)
+			strcpy(sourcesCh[i], sources[i].c_str());
 		}
-		programs.insert({ programName,clCreateProgramWithSource(context,sources.size(),sourcesCh,sourceLenghts,&error) });
-		MOCL_CHECK_ERROR_("clCreateProgramWithSource(" << programName << "", );
-		if (error != CL_SUCCESS)
+		programs[programName] = clCreateProgramWithSource(context, sources.size(),(const char**) sourcesCh, sourceSizes, &error);
+		MOCL_CHECK_ERROR_("clCreateProgramWithSource(" << programName << ")", );
+		if (error == CL_SUCCESS) 
 		{
 			error = clBuildProgram(programs[programName], 1, &device, builOptions, NULL, NULL);
 			if (error != CL_SUCCESS) {
@@ -193,149 +205,127 @@ namespace MyOpenCL
 				std::cout << str << std::endl;
 			}
 		}
-		/*free(sourceLenghts);
-		for (size_t i = 0; i < sources.size(); i++)
-		{
-			free(&sourcesCh[i]);
-		}
-		free(sourcesCh);*/
-		if (error != CL_SUCCESS)
-		{
-			clReleaseProgram(programs[programName]);
-			programs.erase(programName);
-		}
+
+
+		free(sourceSizes);
 
 	}
 
-	void Mocl::AddKernel(std::string kernelName, std::string programName)
+	void Mocl::AddAndBuildProgramWithSource(std::vector<std::string> kernelNames, std::string programName, std::vector<std::string> sources, const char* builOptions)
+	{
+		AddAndBuildProgramWithSource(programName, sources, builOptions);
+		MOCL_CHECK_ERROR_("AddAndBuildProgramWithSource",)
+		CreateKernels(kernelNames, programName);
+		MOCL_CHECK_ERROR_("AddAndBuildProgramWithSource", )
+	}
+
+	void Mocl::CreateKernel(std::string kernelName, std::string programName)
 	{
 		MOCL_ASSERT_PROGRAM_LOADED(programName);
-		kernels.insert({ kernelName,clCreateKernel(programs[programName],kernelName.c_str(),&error) });
-		MOCL_CHECK_ERROR_("clCreateKernel(" << kernelName << ")",
-						   clReleaseKernel(kernels[kernelName]);
-						   kernels.erase(kernelName););
+		kernels[kernelName] = clCreateKernel(programs[programName],kernelName.c_str(), &error);
+		MOCL_CHECK_ERROR_("clCreateKernel("<< kernelName <<")", );
 	}
 
-	void Mocl::AddKernels(std::vector<std::string> kernelNames, std::string programName)
+	void Mocl::CreateKernels(std::vector<std::string> kernelNames, std::string programName)
 	{
+		MOCL_ASSERT_PROGRAM_LOADED(programName);
 		for (size_t i = 0; i < kernelNames.size(); i++)
 		{
-			MOCL_ASSERT_PROGRAM_LOADED(programName);
-			kernels.insert({ kernelNames[i],clCreateKernel(programs[programName],kernelNames[i].c_str(),&error) });
+			kernels[kernelNames[i]] = clCreateKernel(programs[programName], kernelNames[i].c_str(), &error);
 			MOCL_CHECK_ERROR_("clCreateKernel(" << kernelNames[i] << ")", );
 		}
 	}
 
-	void Mocl::AddKernel(std::string kernelName, std::string programName, const char* programBuildOptions, std::string source)
-	{
-		std::vector<std::string> sourceV;
-		sourceV.push_back(source);
-		AddAndBuildProgramWithSource(programName, sourceV, programBuildOptions);
-		MOCL_CHECK_ERROR_("AddAndBuildProgramWithSource(" << programName << ")", 
-						   return;);
-		AddKernel(kernelName, programName);
-		MOCL_CHECK_ERROR_("AddKernel(" << kernelName << ")", );
-	}
-
-	void Mocl::AddKernels(std::vector<std::string> kernelNames, std::string programName, const char* programBuildOptions, std::vector<std::string> sources)
-	{
-		AddAndBuildProgramWithSource(programName, sources, programBuildOptions);
-		MOCL_CHECK_ERROR_("AddAndBuildProgramWithSource(" << programName << ")", );
-		AddKernels(kernelNames, programName);
-		MOCL_CHECK_ERROR_("AddKernels(" << programName << ")", );
-	}
-
-
 	void Mocl::Test()
 	{
-		
-		const char* progS = 
+
+		const char* progS =
 			"__kernel void Add(__global int*a, __global int* b,__global int* n)\n"
 			"{\n"
 			"	int i = get_global_id(0);\n"
 			"	if(i >= n[0]) return;\n"
 			"	a[i] += b[i];\n"
 			"}";
-		
+
 		size_t progSL = strlen(progS);
-		cl_program prog = clCreateProgramWithSource(context, 1, &progS,&progSL, &error);
+		cl_program prog = clCreateProgramWithSource(context, 1, &progS, &progSL, &error);
 		MOCL_CHECK_ERROR_("clCreateProgramWithSource", return; );
-		
+
 		error = clBuildProgram(prog, 1, &device, "", NULL, NULL);
 		if (error != CL_SUCCESS) {
 			std::string str;
 			cl::Program(prog).getBuildInfo<std::string>(cl::Device(device), CL_PROGRAM_BUILD_LOG, &str);
 			std::cout << str << std::endl;
 		}
-		
+
 		programs.insert({ "P1",prog });
-		
+
 		cl_kernel kern = clCreateKernel(prog, "Add", &error);
 		MOCL_CHECK_ERROR_("clCreateKernel", return; );
-		
+
 		kernels.insert({ "Add",kern });
 		int N = 100000;
-		int* a = (int*) malloc(N * sizeof(int));
-		int* b = (int*) malloc(N * sizeof(int));
+		int* a = (int*)malloc(N * sizeof(int));
+		int* b = (int*)malloc(N * sizeof(int));
 		for (size_t i = 0; i < N; i++)
 		{
 			a[i] = i;
 			b[i] -= i;
 		}
-		
+
 		cl_mem mA = clCreateBuffer(context, CL_MEM_READ_WRITE, N * sizeof(int), NULL, &error);
 		MOCL_CHECK_ERROR_("clCreateBuffer(a)", return; );
-		
+
 		cl_mem mB = clCreateBuffer(context, CL_MEM_READ_WRITE, N * sizeof(int), NULL, &error);
 		MOCL_CHECK_ERROR_("clCreateBuffer(b)", return; );
-		
-		cl_mem mN = clCreateBuffer(context, CL_MEM_READ_WRITE,sizeof(int), NULL, &error);
+
+		cl_mem mN = clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(int), NULL, &error);
 		MOCL_CHECK_ERROR_("clCreateBuffer(N)", return; );
-		
+
 
 		error = clSetKernelArg(kernels["Add"], 0, sizeof(cl_mem), &mA);
 		MOCL_CHECK_ERROR_("clSetKernelArg(a)", return; );
-		
+
 
 		error = clSetKernelArg(kernels["Add"], 1, sizeof(cl_mem), &mB);
 		MOCL_CHECK_ERROR_("clSetKernelArg(b)", return; );
-		
+
 
 		error = clSetKernelArg(kernels["Add"], 2, sizeof(cl_mem), &mN);
 		MOCL_CHECK_ERROR_("clSetKernelArg(N)", return; );
-		
+
 
 		cl_event evWrite[3];
-		error = clEnqueueWriteBuffer(queue,mA, CL_TRUE, NULL, N * sizeof(int), a, NULL, NULL, evWrite);
+		error = clEnqueueWriteBuffer(queue, mA, CL_TRUE, NULL, N * sizeof(int), a, NULL, NULL, evWrite);
 		MOCL_CHECK_ERROR_("clEnqueueWriteBuffer(a)", return; );
-		
-		error = clEnqueueWriteBuffer(queue,mB, CL_TRUE, NULL, N * sizeof(int), b, NULL, NULL, evWrite+1);
+
+		error = clEnqueueWriteBuffer(queue, mB, CL_TRUE, NULL, N * sizeof(int), b, NULL, NULL, evWrite + 1);
 		MOCL_CHECK_ERROR_("clEnqueueWriteBuffer(b)", return; );
-		
-		error = clEnqueueWriteBuffer(queue,mN, CL_TRUE, NULL,sizeof(int), &N, NULL, NULL, evWrite+2);
+
+		error = clEnqueueWriteBuffer(queue, mN, CL_TRUE, NULL, sizeof(int), &N, NULL, NULL, evWrite + 2);
 		MOCL_CHECK_ERROR_("clEnqueueWriteBuffer(c)", return; );
-		
+
 
 
 		size_t gWG = RoundToMaxWorkGroupSizeMultiple(N);
 		cl_event evND;
-		
+
 		error = clEnqueueNDRangeKernel(queue, kernels["Add"], 1, NULL, &gWG, &localWorkGroupSize, 3, evWrite, &evND);
 		MOCL_CHECK_ERROR_("clEnqueueNDRangeKernel(Add)", return; );
-		
+
 		cl_event evRead;
 		error = clEnqueueReadBuffer(queue, mA, CL_TRUE, NULL, N * sizeof(int), a, 1, &evND, &evRead);
 		MOCL_CHECK_ERROR_("clEnqueueReadBuffer(a)", return; );
-		
+
 		error = clWaitForEvents(1, &evRead);
 		MOCL_CHECK_ERROR_("clWaitForEvents(evRead)", return; );
-		
+
 		for (size_t i = 0; i < N; i++)
 		{
 			if (a[i] != N) std::cout << i << " | " << a[i] << std::endl; break;
 		}
 
-		
+
 		free(a);
 		free(b);
 		clReleaseMemObject(mA);
@@ -354,7 +344,7 @@ namespace MyOpenCL
 		cl_mem mA;
 		cl_mem mB;
 		cl_mem mN;
-		
+
 		const char** progS = (const char**)malloc(2 * sizeof(const char*));
 		progS[0] =
 			"__kernel void Add(__global int*a, __global int* b,__global int* n)\n"
@@ -370,22 +360,22 @@ namespace MyOpenCL
 			"	if(i >= n[0]) return;\n"
 			"	a[i] -= b[i];\n"
 			"}";
-		
+
 		size_t progSL[2];
 		progSL[0] = strlen(progS[0]);
 		progSL[1] = strlen(progS[1]);
 		programs.insert({ "P1",clCreateProgramWithSource(context, 2, progS,progSL, &error) });
 		MOCL_CHECK_ERROR_("clCreateProgramWithSource", return; );
-		
+
 		error = clBuildProgram(programs["P1"], 1, &device, "", NULL, NULL);
 		if (error != CL_SUCCESS) {
 			std::string str;
 			cl::Program(programs["P1"]).getBuildInfo<std::string>(cl::Device(device), CL_PROGRAM_BUILD_LOG, &str);
 			std::cout << str << std::endl;
 		}
-		
-		
-		
+
+
+
 		kernels.insert({ "Add",clCreateKernel(programs["P1"], "Add", &error) });
 		MOCL_CHECK_ERROR_("clCreateKernel(Add)", return; );
 
@@ -393,58 +383,58 @@ namespace MyOpenCL
 		MOCL_CHECK_ERROR_("clCreateKernel(Sub)", return; );
 
 		int N = 100000;
-		int* a = (int*) malloc(N * sizeof(int));
-		int* b = (int*) malloc(N * sizeof(int));
+		int* a = (int*)malloc(N * sizeof(int));
+		int* b = (int*)malloc(N * sizeof(int));
 		for (size_t i = 0; i < N; i++)
 		{
 			a[i] = i;
-			b[i] = -1* i;
+			b[i] = -1 * i;
 		}
-		
+
 		CreateBuffer(&mA, CL_MEM_READ_WRITE, N * sizeof(int), NULL);
 		MOCL_CHECK_ERROR_("clCreateBuffer(a)", return; );
 		CreateBuffer(&mB, CL_MEM_READ_WRITE, N * sizeof(int), NULL);
 		MOCL_CHECK_ERROR_("clCreateBuffer(b)", return; );
-		CreateBuffer(&mN, CL_MEM_READ_WRITE,sizeof(int), NULL);
+		CreateBuffer(&mN, CL_MEM_READ_WRITE, sizeof(int), NULL);
 		MOCL_CHECK_ERROR_("clCreateBuffer(N)", return; );
-		
+
 
 		SetKernelArg("Sub", 0, sizeof(cl_mem), &mA);
 		MOCL_CHECK_ERROR_("clSetKernelArg(a)", return; );
 		SetKernelArg("Sub", 1, sizeof(cl_mem), &mB);
-		MOCL_CHECK_ERROR_("clSetKernelArg(b)", return; );		
+		MOCL_CHECK_ERROR_("clSetKernelArg(b)", return; );
 		SetKernelArg("Sub", 2, sizeof(cl_mem), &mN);
 		MOCL_CHECK_ERROR_("clSetKernelArg(N)", return; );
-		
+
 
 		cl_event evWrite[3];
 		EnqueueWriteBuffer(&mA, CL_TRUE, NULL, N * sizeof(int), a, NULL, NULL, evWrite);
 		MOCL_CHECK_ERROR_("clEnqueueWriteBuffer(a)", return; );
-		
-		EnqueueWriteBuffer(&mB, CL_TRUE, NULL, N * sizeof(int), b, NULL, NULL, evWrite+1);
+
+		EnqueueWriteBuffer(&mB, CL_TRUE, NULL, N * sizeof(int), b, NULL, NULL, evWrite + 1);
 		MOCL_CHECK_ERROR_("clEnqueueWriteBuffer(b)", return; );
-		
-		EnqueueWriteBuffer(&mN, CL_TRUE, NULL,sizeof(int), &N, NULL, NULL, evWrite+2);
+
+		EnqueueWriteBuffer(&mN, CL_TRUE, NULL, sizeof(int), &N, NULL, NULL, evWrite + 2);
 		MOCL_CHECK_ERROR_("clEnqueueWriteBuffer(c)", return; );
 
 		cl_event evND;
 		size_t Nn = N;
 		Enqueue1DRangeKernel("Sub", NULL, &Nn, 3, evWrite, &evND);
 		MOCL_CHECK_ERROR_("clEnqueueNDRangeKernel(Sub)", return; );
-		
+
 		cl_event evRead;
 		EnqueueReadBuffer(&mA, CL_TRUE, NULL, N * sizeof(int), a, 1, &evND, &evRead);
 		MOCL_CHECK_ERROR_("clEnqueueReadBuffer(a)", return; );
-		
+
 		WaitForEvents(&evRead);
 		MOCL_CHECK_ERROR_("clWaitForEvents(evRead)", return; );
-		
+
 		for (size_t i = 0; i < N; i++)
 		{
 			if (a[i] != N) std::cout << i << " | " << a[i] << std::endl; break;
 		}
 
-		
+
 		free(a);
 		free(b);
 		clReleaseMemObject(mA);
@@ -460,22 +450,193 @@ namespace MyOpenCL
 
 	void Mocl::Test3()
 	{
+		cl_mem mA;
+		cl_mem mB;
+		cl_mem mN;
 		std::vector<std::string> sources;
-		sources.push_back("__kernel void Add(__global int*a, __global int* b,__global int* n)\n"
-						  "{\n"
-						  "	int i = get_global_id(0);\n"
-						  "	if(i >= n[0]) return;\n"
-						  "	a[i] += b[i];\n"
-						  "}");
-		AddAndBuildProgramWithSource("pAdd", sources, "");
-		MOCL_CHECK_ERROR_("AddAndBuildProgramWithSource(" << "pAdd" << ")", );
-		AddKernel("Add", "pAdd");
-		MOCL_CHECK_ERROR_("AddKernels(" << "Add" << ")", );
+		std::vector<std::string> kernelNames;
+		kernelNames.push_back("Add");
+		sources.push_back(
+			"__kernel void Add(__global int*a, __global int* b,__global int* n)\n"
+			"{\n"
+			"	int i = get_global_id(0);\n"
+			"	if(i >= n[0]) return;\n"
+			"	a[i] += b[i];\n"
+			"}"
+		);
+		kernelNames.push_back("Sub");
+		sources.push_back(
+			"__kernel void Sub(__global int*a, __global int* b,__global int* n)\n"
+			"{\n"
+			"	int i = get_global_id(0);\n"
+			"	if(i >= n[0]) return;\n"
+			"	a[i] -= b[i];\n"
+			"}"
+		);
+
+		AddAndBuildProgramWithSource("P1", sources, "");
+
+		CreateKernels(kernelNames, "P1");
+		int N = 100000;
+		int* a = (int*)malloc(N * sizeof(int));
+		int* b = (int*)malloc(N * sizeof(int));
+		for (size_t i = 0; i < N; i++)
+		{
+			a[i] = i;
+			b[i] = -1 * i;
+		}
+
+		CreateBuffer(&mA, CL_MEM_READ_WRITE, N * sizeof(int), NULL);
+		MOCL_CHECK_ERROR_("clCreateBuffer(a)", return; );
+		CreateBuffer(&mB, CL_MEM_READ_WRITE, N * sizeof(int), NULL);
+		MOCL_CHECK_ERROR_("clCreateBuffer(b)", return; );
+		CreateBuffer(&mN, CL_MEM_READ_WRITE, sizeof(int), NULL);
+		MOCL_CHECK_ERROR_("clCreateBuffer(N)", return; );
 
 
+		SetKernelArg("Sub", 0, sizeof(cl_mem), &mA);
+		MOCL_CHECK_ERROR_("clSetKernelArg(a)", return; );
+		SetKernelArg("Sub", 1, sizeof(cl_mem), &mB);
+		MOCL_CHECK_ERROR_("clSetKernelArg(b)", return; );
+		SetKernelArg("Sub", 2, sizeof(cl_mem), &mN);
+		MOCL_CHECK_ERROR_("clSetKernelArg(N)", return; );
+
+
+		cl_event evWrite[3];
+		EnqueueWriteBuffer(&mA, CL_TRUE, NULL, N * sizeof(int), a, NULL, NULL, evWrite);
+		MOCL_CHECK_ERROR_("clEnqueueWriteBuffer(a)", return; );
+
+		EnqueueWriteBuffer(&mB, CL_TRUE, NULL, N * sizeof(int), b, NULL, NULL, evWrite + 1);
+		MOCL_CHECK_ERROR_("clEnqueueWriteBuffer(b)", return; );
+
+		EnqueueWriteBuffer(&mN, CL_TRUE, NULL, sizeof(int), &N, NULL, NULL, evWrite + 2);
+		MOCL_CHECK_ERROR_("clEnqueueWriteBuffer(c)", return; );
+
+		cl_event evND;
+		size_t Nn = N;
+		Enqueue1DRangeKernel("Sub", NULL, &Nn, 3, evWrite, &evND);
+		MOCL_CHECK_ERROR_("clEnqueueNDRangeKernel(Sub)", return; );
+
+		cl_event evRead;
+		EnqueueReadBuffer(&mA, CL_TRUE, NULL, N * sizeof(int), a, 1, &evND, &evRead);
+		MOCL_CHECK_ERROR_("clEnqueueReadBuffer(a)", return; );
+
+		WaitForEvents(&evRead);
+		MOCL_CHECK_ERROR_("clWaitForEvents(evRead)", return; );
+
+		for (size_t i = 0; i < N; i++)
+		{
+			if (a[i] != N) std::cout << i << " | " << a[i] << std::endl; break;
+		}
+
+
+		free(a);
+		free(b);
+		clReleaseMemObject(mA);
+		clReleaseMemObject(mB);
+		clReleaseMemObject(mN);
+
+		clReleaseEvent(evND);
+		clReleaseEvent(evWrite[0]);
+		clReleaseEvent(evWrite[1]);
+		clReleaseEvent(evWrite[2]);
+		clReleaseEvent(evRead);
 	}
 
-	
+	void Mocl::Test4()
+	{
+		cl_mem mA;
+		cl_mem mB;
+		cl_mem mN;
+		std::vector<std::string> sources;
+		std::vector<std::string> kernelNames;
+		kernelNames.push_back("Add");
+		sources.push_back(
+			"__kernel void Add(__global int*a, __global int* b,__global int* n)\n"
+			"{\n"
+			"	int i = get_global_id(0);\n"
+			"	if(i >= n[0]) return;\n"
+			"	a[i] += b[i];\n"
+			"}"
+		);
+		kernelNames.push_back("Sub");
+		sources.push_back(
+			"__kernel void Sub(__global int*a, __global int* b,__global int* n)\n"
+			"{\n"
+			"	int i = get_global_id(0);\n"
+			"	if(i >= n[0]) return;\n"
+			"	a[i] -= b[i];\n"
+			"}"
+		);
+
+		AddAndBuildProgramWithSource(kernelNames, "P1", sources, "");
+		MOCL_CHECK_ERROR_("AddAndBuildProgramWithSource", );
+
+		int N = 10000000;
+		int* a = (int*)malloc(N * sizeof(int));
+		int* b = (int*)malloc(N * sizeof(int));
+		for (size_t i = 0; i < N; i++)
+		{
+			a[i] = i;
+			b[i] = -1 * i;
+		}
+
+		CreateBuffer(&mA, CL_MEM_READ_WRITE, N * sizeof(int), NULL);
+		MOCL_CHECK_ERROR_("clCreateBuffer(a)", return; );
+		CreateBuffer(&mB, CL_MEM_READ_WRITE, N * sizeof(int), NULL);
+		MOCL_CHECK_ERROR_("clCreateBuffer(b)", return; );
+		CreateBuffer(&mN, CL_MEM_READ_WRITE, sizeof(int), NULL);
+		MOCL_CHECK_ERROR_("clCreateBuffer(N)", return; );
+
+
+		SetKernelArg("Sub", 0, sizeof(cl_mem), &mA);
+		MOCL_CHECK_ERROR_("clSetKernelArg(a)", return; );
+		SetKernelArg("Sub", 1, sizeof(cl_mem), &mB);
+		MOCL_CHECK_ERROR_("clSetKernelArg(b)", return; );
+		SetKernelArg("Sub", 2, sizeof(cl_mem), &mN);
+		MOCL_CHECK_ERROR_("clSetKernelArg(N)", return; );
+
+
+		cl_event evWrite[3];
+		EnqueueWriteBuffer(&mA, CL_TRUE, NULL, N * sizeof(int), a, NULL, NULL, evWrite);
+		MOCL_CHECK_ERROR_("clEnqueueWriteBuffer(a)", return; );
+
+		EnqueueWriteBuffer(&mB, CL_TRUE, NULL, N * sizeof(int), b, NULL, NULL, evWrite + 1);
+		MOCL_CHECK_ERROR_("clEnqueueWriteBuffer(b)", return; );
+
+		EnqueueWriteBuffer(&mN, CL_TRUE, NULL, sizeof(int), &N, NULL, NULL, evWrite + 2);
+		MOCL_CHECK_ERROR_("clEnqueueWriteBuffer(c)", return; );
+
+		cl_event evND;
+		size_t Nn = N;
+		Enqueue1DRangeKernel("Sub", NULL, &Nn, 3, evWrite, &evND);
+		MOCL_CHECK_ERROR_("clEnqueueNDRangeKernel(Sub)", return; );
+
+		cl_event evRead;
+		EnqueueReadBuffer(&mA, CL_TRUE, NULL, N * sizeof(int), a, 1, &evND, &evRead);
+		MOCL_CHECK_ERROR_("clEnqueueReadBuffer(a)", return; );
+
+		WaitForEvents(&evRead);
+		MOCL_CHECK_ERROR_("clWaitForEvents(evRead)", return; );
+
+		for (size_t i = 0; i < N; i++)
+		{
+			if (a[i] != N) std::cout << i << " | " << a[i] << std::endl; break;
+		}
+
+
+		free(a);
+		free(b);
+		clReleaseMemObject(mA);
+		clReleaseMemObject(mB);
+		clReleaseMemObject(mN);
+
+		clReleaseEvent(evND);
+		clReleaseEvent(evWrite[0]);
+		clReleaseEvent(evWrite[1]);
+		clReleaseEvent(evWrite[2]);
+		clReleaseEvent(evRead);
+	}
 
 	void Mocl::CreateBuffer(cl_mem* mem, cl_mem_flags flags, size_t size, void* hostPtr)
 	{
