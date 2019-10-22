@@ -1,67 +1,56 @@
-// main.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
-#include <string>
-#include <sstream>
-#include <fstream>
-#include <streambuf>
-#include "MyOpenCL/Mocl.h"
-void main000() {
-
-	MyOpenCL::Mocl::Initialize(CL_DEVICE_TYPE_ACCELERATOR);
-	MOCL_CHECK_ERROR(MyOpenCL::Mocl::Error(), "Initialize", );
-	MyOpenCL::Mocl::Test4();
-	MyOpenCL::Mocl::Destroy();
-	MOCL_CHECK_ERROR(MyOpenCL::Mocl::Error(), "Destroy", );
+#include "Mocl/Platform.h"//OK
+#include "Mocl/PlatformInfo.h"//OK
+#include "Mocl/Device.h"//OK
+#include "Mocl/DeviceInfo.h"//Not implemented!!!!!!!!!
+#include "Mocl/Context.h"//only usage as container
+#include "Mocl/CommandQueue.h"//only usage as container
+#include "Mocl/Mem.h"//only usage as container
+void main002()
+{
+	cl_int error = 0;
+	Mocl::Platform platform = Mocl::Platform::GetDefaultID(&error);
+	Mocl::Device device = platform.GetDefaultDeviceID(CL_DEVICE_TYPE_GPU, &error);
+	std::cout << "Platform: " << platform.GetInfo().Name(&error) << "\n\tDevice: " << device.GetInfo().Name(&error);
 }
-
-void main001() {
-	std::ifstream t("file.txt");
-	std::string str((std::istreambuf_iterator<char>(t)),
-		std::istreambuf_iterator<char>());
-	std::cout << str << std::endl;
-}
-void main002() {
-	std::ifstream inFile;
-	inFile.open("file.txt"); //open the input file
-
-	std::stringstream strStream;
-	strStream << inFile.rdbuf(); //read the file
-	std::string str = strStream.str(); //str holds the content of the file
-
-	std::cout << str << "\n";
-	inFile.close();
-}
-void main003() {
-
-	std::string line;
-	std::ifstream myfile("file.txt");
-	if (myfile.is_open())
+void main001() 
+{
+	cl_int error = 0;
+	std::vector<Mocl::Platform> allPlatforms = Mocl::Platform::GetIDs(5, &error);
+	std::cout << "numPlatforms: " << allPlatforms.size() << std::endl;
+	for (size_t i = 0; i < allPlatforms.size(); i++)
 	{
-		while (std::getline(myfile, line))
+		std::vector<Mocl::Device> devices = allPlatforms[i].GetDeviceIDs(CL_DEVICE_TYPE_ALL, 10, &error);
+		std::cout << allPlatforms[i].GetInfo().Name(&error) << " ("<< devices.size() << ")" << std::endl;
+		for (size_t j = 0; j < devices.size(); j++)
 		{
-			std::cout << line << '\n';
+			std::cout << "\t" << devices[j].GetInfo().Name(&error) << std::endl;
 		}
-		myfile.close();
 	}
-
-	else std::cout << "Unable to open file";
 }
+
+void main000() 
+{/*
+	cl_int error = 0;
+	cl_uint numPlatf = 0;
+	cl_uint numDev = 0;
+	Mocl::Platform* platf = Mocl::Platform::GetIDs(10, &numPlatf, &error);
+	Mocl::Device* dev = platf[0].GetDeviceIDs(CL_DEVICE_TYPE_ALL, 10, &numDev, &error);
+	Mocl::PlatformInfo pInf = platf[0].GetInfo();
+	Mocl::Device device(dev[0]);
+	std::cout << pInf.GetInfoProfile(&error) << std::endl;
+	std::cout << pInf.GetInfoVersion(&error) << std::endl;
+	std::cout << pInf.GetInfoName(&error) << std::endl;
+	std::cout << pInf.GetInfoVendor(&error) << std::endl;
+	std::cout << pInf.GetInfoExtensions(&error) << std::endl;
+	std::cout << pInf.GetInfoExtensionsVect(&error)[0] << std::endl;
+	std::cout << pInf.GetInfoHostTimerResolution(&error) << std::endl;
+	free(platf);
+	free(dev);*/
+}
+
 int main()
 {
-
-	main000();
+	main002();
 	std::cin.ignore();
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

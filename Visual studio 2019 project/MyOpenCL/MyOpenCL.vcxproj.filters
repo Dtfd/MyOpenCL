@@ -2,8 +2,26 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyOpenCL\Mocl.cpp">
-      <Filter>MyOpenCL\Mocl</Filter>
+    <ClCompile Include="Mocl\Device.cpp">
+      <Filter>MyOpenCL\Mocl\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Mocl\Context.cpp">
+      <Filter>MyOpenCL\Mocl\Context</Filter>
+    </ClCompile>
+    <ClCompile Include="Mocl\Mem.cpp">
+      <Filter>MyOpenCL\Mocl\Mem</Filter>
+    </ClCompile>
+    <ClCompile Include="Mocl\CommandQueue.cpp">
+      <Filter>MyOpenCL\Mocl\CommandQueue</Filter>
+    </ClCompile>
+    <ClCompile Include="Mocl\DeviceInfo.cpp">
+      <Filter>MyOpenCL\Mocl\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Mocl\PlatformInfo.cpp">
+      <Filter>MyOpenCL\Mocl\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="Mocl\Platform.cpp">
+      <Filter>MyOpenCL\Mocl\Platform</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -13,10 +31,43 @@
     <Filter Include="MyOpenCL\Mocl">
       <UniqueIdentifier>{79e881b7-c9ea-4daf-b15f-b11b6963d967}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MyOpenCL\Mocl\Device">
+      <UniqueIdentifier>{8193dfcb-797a-4fae-89a4-e388ab4c5f68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MyOpenCL\Mocl\Platform">
+      <UniqueIdentifier>{0a8bacd4-16d0-456d-bf74-a5ad862790bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MyOpenCL\Mocl\Context">
+      <UniqueIdentifier>{3376b814-d766-4590-a7de-cce886c5928d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MyOpenCL\Mocl\Mem">
+      <UniqueIdentifier>{3413b719-d8aa-44fb-ac99-f795938a5e5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MyOpenCL\Mocl\CommandQueue">
+      <UniqueIdentifier>{0f7d9f32-a023-4dde-ae5d-960b169b98bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyOpenCL\Mocl.h">
-      <Filter>MyOpenCL\Mocl</Filter>
+    <ClInclude Include="Mocl\Device.h">
+      <Filter>MyOpenCL\Mocl\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Mocl\Context.h">
+      <Filter>MyOpenCL\Mocl\Context</Filter>
+    </ClInclude>
+    <ClInclude Include="Mocl\Mem.h">
+      <Filter>MyOpenCL\Mocl\Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="Mocl\CommandQueue.h">
+      <Filter>MyOpenCL\Mocl\CommandQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="Mocl\DeviceInfo.h">
+      <Filter>MyOpenCL\Mocl\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Mocl\Platform.h">
+      <Filter>MyOpenCL\Mocl\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Mocl\PlatformInfo.h">
+      <Filter>MyOpenCL\Mocl\Platform</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
