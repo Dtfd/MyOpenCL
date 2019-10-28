@@ -2,6 +2,7 @@
 
 namespace Mocl
 {
+	Device::Device() :_deviceId(NULL) {}
 	Device::Device(cl_device_id& deviceId) :_deviceId(deviceId) {}
 
 	Device::operator cl_device_id& ()
@@ -53,7 +54,17 @@ namespace Mocl
 	{
 		return clRetainDevice(_deviceId);
 	}
+	/*
+	cl_context Device::CreateClContext(const cl_context_properties* properties, void (CL_CALLBACK* pfnNotify) (const char* errinfo, const void* private_info, size_t cb, void* user_data), void* userData, cl_int* errorRet)
+	{
+		return clCreateContext(properties,1,&_deviceId,pfnNotify,userData,errorRet);
+	}
 
+	Context Device::CreateContext(const cl_context_properties* properties, void (CL_CALLBACK* pfnNotify) (const char* errinfo, const void* private_info, size_t cb, void* user_data), void* userData, cl_int* errorRet)
+	{
+		return Context(clCreateContext(properties, 1, &_deviceId, pfnNotify, userData, errorRet));
+	}
+	*/
 	cl_int Device::GetDeviceInfo(cl_device_info paramName, size_t paramValueSize, void* paramValue, size_t* paramValueSizeRet)
 	{
 		return clGetDeviceInfo(_deviceId,paramName,paramValueSize,paramValue,paramValueSizeRet);
