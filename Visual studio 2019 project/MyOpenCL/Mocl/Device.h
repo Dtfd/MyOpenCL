@@ -10,6 +10,7 @@ namespace Mocl
 	private:
 		cl_device_id _deviceId;
 	public:
+		Device();
 		Device(cl_device_id& deviceId);
 		explicit operator cl_device_id& ();
 		explicit operator cl_device_id* ();
@@ -30,6 +31,15 @@ namespace Mocl
 		cl_int Release();
 		cl_int Retain();
 
+		/*cl_context CreateClContext(const cl_context_properties* properties,
+								   void (CL_CALLBACK* pfn_notify) (const char* errinfo, const void* private_info, size_t cb, void* user_data),
+								   void* user_data,
+								   cl_int* errcode_ret);
+		Context CreateContext(const cl_context_properties* properties,
+							  void (CL_CALLBACK* pfn_notify) (const char* errinfo, const void* private_info, size_t cb, void* user_data),
+							  void* user_data,
+							  cl_int* errcode_ret);*/
+		
 		cl_int GetDeviceInfo(cl_device_info  paramName,
 							   size_t  paramValueSize,
 							   void* paramValue,
